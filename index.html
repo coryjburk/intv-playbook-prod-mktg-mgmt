@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#0B0F19]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eccles MBA — Product Marketing Manager Interview Playbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- ===================================================================== -->
+    <!-- EDIT EVERYTHING IN THE CONFIG BLOCK BELOW TO REBRAND OR RETUNE.        -->
+    <!-- Content data (questions, frameworks, etc.) lives further down in       -->
+    <!-- the CONTENT block, also clearly labeled.                               -->
+    <!-- ===================================================================== -->
+    <script>
+    const CONFIG = {
+        brand: {
+            school: "David Eccles School of Business",
+            org: "University of Utah MBA Career Services",
+            track: "Product Marketing Manager · Interview Playbook",
+            badge: "PMM Track",
+            monogram: "UU",
+            heroEyebrow: "Marketing Track · PMM Interview Prep",
+            heroTitle: "Product Marketing Mastery",
+            heroSub: "100 Product Marketing Manager interview questions with model answers, frameworks, launch playbooks, and recruiter red flags — built for candidates targeting PMM, GTM Strategy, Product Adoption, and Growth Marketing roles."
+        },
+        colors: {
+            red: "#CC0000",
+            gold: "#c9a84c",
+            darkBg: "#0B0F19",
+            cardBg: "#161D30",
+            border: "#232D45"
+        },
+        // Readiness tiers, driven by real evaluation scores (0-100). Lowest threshold first.
+        tiers: [
+            { min: 0,  label: "Getting Started" },
+            { min: 50, label: "Developing" },
+            { min: 68, label: "Competitive" },
+            { min: 82, label: "Interview Ready" },
+            { min: 92, label: "Offer Ready" }
+        ],
+        delivery: { idealSeconds: [60, 90], idealWPM: [130, 150] },
+        fillerWords: ["um", "uh", "like", "so", "basically", "actually", "sort of", "kind of", "you know"],
+        // --- AI / LLM settings ---------------------------------------------
+        // Inside the Claude artifact preview, calls to api.anthropic.com work
+        // with NO key. On your own hosting (GitHub Pages / Vercel), paste a key
+        // below to enable in-app AI, OR leave it blank and the tool will fall
+        // back to a copy-paste prompt + manual score logging (works everywhere).
+        api: {
+            endpoint: "https://api.anthropic.com/v1/messages",
+            model: "claude-sonnet-4-6",
+            maxTokens: 1500,
+            browserKey: "" // optional: "sk-ant-..." to enable in-app AI on your own deploy
+        },
+        // The 5 dimensions the LLM scores. Order drives the dashboard math.
+        scoringDimensions: [
+            { key: "gtm",            label: "GTM Thinking & Strategy" },
+            { key: "valueprop",      label: "Value Proposition & Messaging" },
+            { key: "metrics",        label: "Metric Selection & Commercial Ownership" },
+            { key: "crossfunctional",label: "Cross-Functional Leadership" },
+            { key: "delivery",       label: "Delivery, Pacing & Presence" }
+        ],
+        storageKey: "eccles_pmm_results_v2"
+    };
+    </script>
+
+    <style>
+        :root {
+            --eccles-red: #CC0000;
+            --eccles-gold: #c9a84c;
+            --dark-bg: #0B0F19;
+            --card-bg: #161D30;
+            --border-color: #232D45;
+        }
+        body { font-family: 'DM Sans', sans-serif; background-color: var(--dark-bg); color: #E2E8F0; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        .eccles-gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 30%, var(--eccles-gold) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #0B0F19; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #232D45; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--eccles-gold); }
+        .nav-link.active { border-left: 4px solid var(--eccles-red); color: #fff; background: #161D30; }
+        .mtab.active { color: #fff; border-bottom-color: var(--eccles-red); }
+        .question-card { transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; }
+        .question-card:hover { transform: translateY(-2px); border-color: rgba(201,168,76,.4); box-shadow: 0 10px 20px -10px rgba(0,0,0,.5); }
+        .pulse-record { animation: pulse-danger 1.5s infinite; background-color: var(--eccles-red) !important; color:#fff !important; }
+        @keyframes pulse-danger {
+            0% { box-shadow: 0 0 0 0 rgba(204,0,0,.7); }
+            70% { box-shadow: 0 0 0 10px rgba(204,0,0,0); }
+            100% { box-shadow: 0 0 0 0 rgba(204,0,0,0); }
+        }
+        :focus-visible { outline: 2px solid var(--eccles-gold); outline-offset: 2px; }
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+        }
+        .prose-pmm h5 { color: var(--eccles-gold); font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; font-weight:700; margin:1rem 0 .4rem; }
+        .prose-pmm li { margin:.25rem 0 .25rem 1rem; list-style:disc; }
+        .prose-pmm strong { color:#fff; }
+    </style>
+</head>
+<body class="h-full flex flex-col antialiased selection:bg-[#CC0000] selection:text-white">
+
+    <header class="sticky top-0 z-40 flex h-16 w-full items-center justify-between border-b border-[#232D45] bg-[#0B0F19]/90 px-4 sm:px-6 backdrop-blur-md">
+        <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#CC0000]">
+                <span class="text-lg font-black text-white tracking-tighter" id="brand-monogram">UU</span>
+            </div>
+            <div>
+                <h2 class="text-xs sm:text-sm font-bold uppercase tracking-widest text-white" id="brand-school">David Eccles School of Business</h2>
+                <p class="text-[11px] sm:text-xs font-semibold text-[#c9a84c]" id="brand-track">Product Marketing Manager · Interview Playbook</p>
+            </div>
+        </div>
+        <div class="hidden sm:flex items-center gap-4">
+            <span class="inline-flex items-center rounded-full bg-[#CC0000]/10 px-3 py-1 text-xs font-bold text-[#CC0000] ring-1 ring-inset ring-[#CC0000]/20" id="brand-badge">PMM Track</span>
+            <div class="h-4 w-px bg-[#232D45]"></div>
+            <p class="text-xs font-medium text-gray-400" id="brand-org">University of Utah MBA Career Services</p>
+        </div>
+    </header>
+
+    <!-- Mobile tab bar (the desktop sidebar is hidden on small screens) -->
+    <nav id="mobile-nav" class="md:hidden sticky top-16 z-30 flex gap-1 overflow-x-auto border-b border-[#232D45] bg-[#0E1424] px-2 py-2 custom-scrollbar"></nav>
+
+    <div class="flex flex-1 overflow-hidden">
+        <aside class="hidden w-64 flex-col border-r border-[#232D45] bg-[#0E1424] md:flex">
+            <div class="flex flex-1 flex-col overflow-y-auto pt-6 pb-4">
+                <nav class="flex-1 space-y-1 px-3" id="desktop-nav"></nav>
+            </div>
+            <div class="border-t border-[#232D45] p-4 bg-[#0B0F19]">
+                <div class="rounded-lg bg-[#161D30] p-3 text-center ring-1 ring-[#c9a84c]/20">
+                    <p class="text-xs font-bold text-[#c9a84c] uppercase tracking-wider mb-1">Coaching Mode</p>
+                    <p class="text-[11px] text-gray-400">Calibrated for technology and enterprise GTM roles.</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 overflow-y-auto bg-[#0B0F19] custom-scrollbar">
+
+            <div class="relative overflow-hidden bg-[#0E1424] border-b border-[#232D45] py-8 sm:py-10 px-5 sm:px-8">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#CC0000_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative max-w-5xl">
+                    <span class="text-xs font-bold uppercase tracking-widest text-[#c9a84c]" id="hero-eyebrow"></span>
+                    <h1 class="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight eccles-gradient-text" id="hero-title"></h1>
+                    <p class="mt-3 text-sm sm:text-base text-gray-400 max-w-3xl leading-relaxed" id="hero-sub"></p>
+
+                    <div class="mt-8 grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4 max-w-4xl">
+                        <div class="rounded-xl bg-[#161D30] p-4 border border-[#232D45]">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Questions</p>
+                            <p class="mt-1 text-2xl font-bold text-white" id="hero-total">100</p>
+                        </div>
+                        <div class="rounded-xl bg-[#161D30] p-4 border border-[#232D45]">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Readiness</p>
+                            <p class="mt-1 text-2xl font-bold text-[#c9a84c]" id="hero-readiness-level">Getting Started</p>
+                        </div>
+                        <div class="rounded-xl bg-[#161D30] p-4 border border-[#232D45]">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Average Score</p>
+                            <p class="mt-1 text-2xl font-bold text-[#CC0000]" id="hero-avg-score">—</p>
+                        </div>
+                        <div class="rounded-xl bg-[#161D30] p-4 border border-[#232D45]">
+                            <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Questions Evaluated</p>
+                            <p class="mt-1 text-2xl font-bold text-emerald-400" id="hero-eval-count">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-5 sm:p-8 max-w-7xl mx-auto w-full">
+
+                <!-- QUESTION BANK -->
+                <section id="sec-question-bank" class="tab-content block">
+                    <div class="flex flex-col lg:flex-row gap-8">
+                        <div class="w-full lg:w-64 flex-shrink-0 space-y-6">
+                            <div class="rounded-xl bg-[#161D30] border border-[#232D45] p-5">
+                                <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4 flex items-center justify-between">
+                                    <span>Filter by domain</span>
+                                    <button onclick="clearAllFilters()" class="text-[10px] text-[#c9a84c] hover:underline normal-case">Clear all</button>
+                                </h3>
+                                <div class="space-y-3" id="category-filter-group"></div>
+                            </div>
+                            <div class="rounded-xl bg-[#161D30] border border-[#232D45] p-5">
+                                <h3 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Difficulty</h3>
+                                <div class="flex flex-wrap gap-2" id="difficulty-filter-group"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 space-y-4">
+                            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#161D30] border border-[#232D45] rounded-xl p-4">
+                                <div class="relative w-full sm:w-72">
+                                    <input type="text" id="question-search" oninput="filterQuestions()" placeholder="Search questions and keywords…" class="w-full rounded-lg bg-[#0B0F19] border border-[#232D45] px-4 py-2 pl-10 text-sm text-white focus:border-[#c9a84c] focus:outline-none focus:ring-1 focus:ring-[#c9a84c]">
+                                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-xs text-gray-500"></i>
+                                </div>
+                                <div class="text-xs text-gray-400 font-medium">
+                                    Showing <span id="visible-count" class="text-white font-bold">0</span> of <span class="text-white font-bold">100</span> questions
+                                </div>
+                            </div>
+                            <div id="questions-container" class="space-y-4"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- READINESS DASHBOARD -->
+                <section id="sec-readiness-dashboard" class="tab-content hidden space-y-8">
+                    <div class="border-b border-[#232D45] pb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                            <h2 class="text-2xl font-bold text-white">Readiness Dashboard</h2>
+                            <p class="text-sm text-gray-400 mt-1">Scores come from real evaluations of your practice answers — not keyword counts. Each domain reflects the average of the questions you've evaluated in it.</p>
+                            <p class="text-xs text-gray-500 mt-2"><i class="fa-solid fa-circle-check text-emerald-400/70 mr-1"></i>Progress saves automatically on this browser. Use Export to back it up or move it to another device.</p>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <button onclick="exportProgress()" class="flex items-center justify-center gap-1.5 rounded-lg bg-[#232D45] hover:bg-[#2D3A57] px-3 py-2 text-xs font-bold text-white transition-colors">
+                                <i class="fa-solid fa-download"></i><span>Export</span>
+                            </button>
+                            <button onclick="document.getElementById('import-progress-input').click()" class="flex items-center justify-center gap-1.5 rounded-lg bg-[#232D45] hover:bg-[#2D3A57] px-3 py-2 text-xs font-bold text-white transition-colors">
+                                <i class="fa-solid fa-upload"></i><span>Import</span>
+                            </button>
+                            <input type="file" id="import-progress-input" accept="application/json,.json" class="hidden" onchange="importProgress(event)">
+                            <button onclick="resetDashboardScores()" class="flex items-center justify-center gap-1.5 rounded-lg bg-[#232D45] hover:bg-[#2D3A57] px-3 py-2 text-xs font-bold text-white transition-colors">
+                                <i class="fa-solid fa-rotate-left"></i><span>Reset</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="lg:col-span-1 rounded-2xl bg-[#161D30] border border-[#232D45] p-6 flex flex-col items-center justify-center text-center">
+                            <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4">Overall readiness</p>
+                            <div class="relative flex items-center justify-center h-40 w-40 rounded-full border-4 border-[#CC0000] mb-4">
+                                <span class="text-4xl font-black text-white" id="dash-overall-score">—</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-1" id="dash-readiness-tier">Getting Started</h3>
+                            <p class="text-xs text-gray-400 max-w-xs">Evaluate a few practice answers to build out your readiness profile across all eight domains.</p>
+                        </div>
+                        <div class="lg:col-span-2 rounded-2xl bg-[#161D30] border border-[#232D45] p-6 space-y-4">
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider border-b border-[#232D45] pb-2">Domain mastery</h3>
+                            <div class="space-y-4" id="competency-progress-bars"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FRAMEWORKS -->
+                <section id="sec-frameworks" class="tab-content hidden space-y-8">
+                    <div class="border-b border-[#232D45] pb-4">
+                        <h2 class="text-2xl font-bold text-white">PMM Frameworks</h2>
+                        <p class="text-sm text-gray-400 mt-1">The go-to-market methodologies every strong candidate should be able to deploy on demand.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="frameworks-container"></div>
+                </section>
+
+                <!-- BATTLECARD -->
+                <section id="sec-battlecard" class="tab-content hidden space-y-8">
+                    <div class="border-b border-[#232D45] pb-4">
+                        <h2 class="text-2xl font-bold text-white">PMM Battlecard</h2>
+                        <p class="text-sm text-gray-400 mt-1">A rapid-fire review sheet to run through the night before a panel.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="battlecard-container"></div>
+                </section>
+
+                <!-- RED FLAGS -->
+                <section id="sec-red-flags" class="tab-content hidden space-y-8">
+                    <div class="border-b border-[#232D45] pb-4">
+                        <h2 class="text-2xl font-bold text-white">Interview Red Flags</h2>
+                        <p class="text-sm text-gray-400 mt-1">The anti-patterns that most often cost candidates a callback.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="red-flags-container"></div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- PRACTICE MODAL -->
+    <div id="practice-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/80 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-4">
+        <div class="relative w-full max-w-3xl my-4 rounded-2xl border border-[#232D45] bg-[#161D30] p-5 sm:p-6 shadow-2xl">
+            <button onclick="closePracticeModal()" aria-label="Close" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="flex items-center gap-3 border-b border-[#232D45] pb-4 mb-4">
+                <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-[#CC0000]/10 border border-[#CC0000]/30">
+                    <i class="fa-solid fa-microphone text-sm text-[#CC0000]"></i>
+                </div>
+                <div>
+                    <h3 class="text-base font-bold text-white">Practice & evaluation</h3>
+                    <p class="text-xs text-gray-400">Speak or type your answer, then get it evaluated against the PMM rubric.</p>
+                </div>
+            </div>
+
+            <div class="bg-[#0B0F19] rounded-xl p-4 border border-[#232D45] mb-4">
+                <p class="text-xs font-bold uppercase tracking-wider text-[#c9a84c] mb-1">Question</p>
+                <p id="modal-question-text" class="text-sm text-white font-medium"></p>
+            </div>
+
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 mb-4 text-center">
+                <div class="bg-[#0B0F19] rounded-lg p-3 border border-[#232D45]">
+                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Duration</p>
+                    <p id="track-time" class="text-lg font-mono font-bold text-white mt-0.5">00:00</p>
+                </div>
+                <div class="bg-[#0B0F19] rounded-lg p-3 border border-[#232D45]">
+                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Pace</p>
+                    <p id="track-wpm" class="text-lg font-mono font-bold text-white mt-0.5">0 WPM</p>
+                </div>
+                <div class="bg-[#0B0F19] rounded-lg p-3 border border-[#232D45]">
+                    <p class="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Filler words</p>
+                    <p id="track-fillers" class="text-lg font-mono font-bold text-[#CC0000] mt-0.5">0</p>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label for="transcript-area" class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Your answer (type or speak)</label>
+                <textarea id="transcript-area" placeholder="Start recording to transcribe your spoken answer, or just type it here…" class="w-full h-72 overflow-y-auto rounded-xl bg-[#0B0F19] border border-[#232D45] p-4 text-sm text-gray-300 custom-scrollbar leading-relaxed focus:outline-none focus:border-[#c9a84c] focus:ring-1 focus:ring-[#c9a84c]"></textarea>
+            </div>
+
+            <!-- AI / evaluation result -->
+            <div id="eval-result-panel" class="hidden rounded-xl bg-[#0B0F19] border border-emerald-500/20 p-4 mb-4 space-y-3"></div>
+
+            <!-- Manual score logging (fallback when no in-app AI) -->
+            <div id="manual-log-panel" class="hidden rounded-xl bg-[#0B0F19] border border-[#c9a84c]/20 p-4 mb-4 space-y-3"></div>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 border-t border-[#232D45] pt-4">
+                <div class="flex flex-wrap items-center gap-2">
+                    <button id="btn-toggle-record" onclick="toggleRecording()" class="flex items-center justify-center gap-2 rounded-lg bg-[#CC0000] px-4 py-2.5 text-xs font-bold text-white hover:bg-[#A30000] transition-colors shadow-lg shadow-[#CC0000]/10">
+                        <i class="fa-solid fa-microphone"></i><span id="record-btn-text">Start recording</span>
+                    </button>
+                    <button id="btn-reset-sandbox" onclick="resetSandbox()" class="rounded-lg bg-[#232D45] px-3 py-2.5 text-xs font-bold text-gray-300 hover:text-white transition-colors">Reset</button>
+                </div>
+                <button onclick="evaluateResponse()" class="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2.5 text-xs font-bold text-white hover:bg-emerald-500 transition-colors shadow-lg">
+                    <i class="fa-solid fa-circle-nodes"></i><span id="evaluate-btn-text">Evaluate my answer</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- CONTENT BLOCK — questions, frameworks, battlecard, red flags,          -->
+    <!-- curated answers, and per-domain coaching. Edit freely.                 -->
+    <!-- ===================================================================== -->
+    <script>
+    const PMM_CATEGORIES = {
+        1: "Positioning & Messaging",
+        2: "Go-to-Market & Launch",
+        3: "Customer Insights & Segmentation",
+        4: "Growth, Adoption & Monetization",
+        5: "Competitive Intelligence",
+        6: "Stakeholder Alignment & Leadership",
+        7: "Pricing, Packaging & Value",
+        8: "Behavioral & Portfolio"
+    };
+
+    const PMM_DIFFICULTIES = ["Foundational", "Core", "Advanced"];
+
+    // Keywords power search only (NOT scoring).
+    const CATEGORY_KEYWORDS = {
+        1: ["positioning","messaging","narrative","value proposition","framework","hook","triangle","benefit","differentiation"],
+        2: ["go-to-market","gtm","launch","tier","alpha","ga","playbook","rollout","activation","enablement"],
+        3: ["insights","persona","segmentation","jtbd","jobs to be done","qualitative","interview","cohort","research"],
+        4: ["nrr","cac","ltv","churn","expansion","activation","pql","funnel","conversion","retention"],
+        5: ["competitive","battlecard","depositioning","competitor","moat","market share","win-loss"],
+        6: ["stakeholder","cross-functional","alignment","enablement","post-mortem","sales","buy-in"],
+        7: ["pricing","packaging","value-based","monetization","tiers","van westendorp","elasticity"],
+        8: ["impact","case study","resume","storytelling","results","career","trajectory"]
+    };
+
+    // The 100 questions (unchanged — strong as written).
+    const QUESTION_SEEDS = [
+        // CAT 1 — Positioning & Messaging (13)
+        { cat:1, diff:"Foundational", q:"What is the core difference between standard feature descriptions and an executive value proposition statement?" },
+        { cat:1, diff:"Foundational", q:"How do you audit an enterprise B2B landing page that has over-indexed on technical specs?" },
+        { cat:1, diff:"Core", q:"Position Slack to a non-technical Chief Human Resources Officer focused on reducing employee attrition." },
+        { cat:1, diff:"Core", q:"An established AI SaaS platform is losing ground to open-source models. How do you pivot the positioning?" },
+        { cat:1, diff:"Core", q:"Draft a concise positioning triangle for a premium secure-communications device built for corporate legal teams." },
+        { cat:1, diff:"Core", q:"How do you validate that a new product narrative resonates with enterprise buyers before launch?" },
+        { cat:1, diff:"Core", q:"Position a developer-focused API platform to a non-technical CMO who controls the budget." },
+        { cat:1, diff:"Advanced", q:"Apple ships a security change that breaks your data-tracking feature. How do you re-position overnight?" },
+        { cat:1, diff:"Advanced", q:"Your enterprise product has a vulnerability patch issued. How do you manage the proactive outbound messaging?" },
+        { cat:1, diff:"Advanced", q:"Position a legacy on-prem ERP product during an aggressive market shift toward cloud-native solutions." },
+        { cat:1, diff:"Advanced", q:"Build the messaging hierarchy for an AI agent designed to eliminate entry-level customer support roles." },
+        { cat:1, diff:"Core", q:"How do you prevent 'positioning drift' when regional teams adapt a global narrative to local markets?" },
+        { cat:1, diff:"Foundational", q:"What role does an anti-persona play in product positioning, and how do you document it?" },
+        // CAT 2 — Go-to-Market & Launch (13)
+        { cat:2, diff:"Foundational", q:"Detail the functional components of a standard Tier-1 international SaaS launch timeline." },
+        { cat:2, diff:"Foundational", q:"How do you define the success threshold for an alpha test from a go-to-market readiness lens?" },
+        { cat:2, diff:"Core", q:"Design the Tier-1 GTM strategy for a logistics-optimization platform sold to mid-market retailers." },
+        { cat:2, diff:"Core", q:"Feature adoption is 45% below forecast three months post-launch. How do you run the diagnostic?" },
+        { cat:2, diff:"Core", q:"Formulate a localized market-entry framework for an EV ride-sharing platform in mid-tier urban centers." },
+        { cat:2, diff:"Core", q:"How do you structure collaboration between PMM, Product, and Sales Enablement 60 days before GA?" },
+        { cat:2, diff:"Core", q:"Design a cross-channel activation plan targeting banks for an AI-backed fraud-detection tool." },
+        { cat:2, diff:"Advanced", q:"Orchestrate a counter-launch against a well-funded competitor undercutting your base tier by 40%." },
+        { cat:2, diff:"Advanced", q:"Design a GTM blueprint for a regulated healthcare data layer built on blockchain infrastructure." },
+        { cat:2, diff:"Advanced", q:"Engineering says a critical feature slips 48 hours past the announced launch date. What's your playbook?" },
+        { cat:2, diff:"Advanced", q:"How do you build a GTM plan for a product category that does not yet exist in the market?" },
+        { cat:2, diff:"Core", q:"How do you balance self-serve PLG with direct enterprise sales during a major expansion launch?" },
+        { cat:2, diff:"Foundational", q:"What criteria differentiate a Tier-1, Tier-2, and Tier-3 product launch?" },
+        // CAT 3 — Customer Insights & Segmentation (12)
+        { cat:3, diff:"Foundational", q:"What is the difference between descriptive demographic profiles and behavioral segmentation?" },
+        { cat:3, diff:"Foundational", q:"How do you set up a useful qualitative user-research panel with no baseline budget?" },
+        { cat:3, diff:"Core", q:"Apply Jobs-To-Be-Done to isolate why enterprise PMs migrate from spreadsheets to a tool like Asana." },
+        { cat:3, diff:"Core", q:"Your highest-LTV segment is non-technical department heads. How does that change your persona cards?" },
+        { cat:3, diff:"Core", q:"Design a qualitative research study to investigate a sudden 20% churn spike among year-one users." },
+        { cat:3, diff:"Core", q:"How do you identify, interview, and profile the secondary economic buyer in an enterprise cybersecurity deal?" },
+        { cat:3, diff:"Core", q:"Synthesize quantitative telemetry and qualitative advisory-board input into a single GTM direction." },
+        { cat:3, diff:"Advanced", q:"Your SaaS product has attracted an unintended enterprise segment. How do you validate a GTM pivot?" },
+        { cat:3, diff:"Advanced", q:"Develop a quantitative segmentation method using cluster analysis to find high-propensity expansion buyers." },
+        { cat:3, diff:"Advanced", q:"How do you reconcile conflicting requests between a high-volume developer community and high-revenue enterprise buyers?" },
+        { cat:3, diff:"Core", q:"How do you translate a deep persona into actionable collateral for an outsourced outbound SDR team?" },
+        { cat:3, diff:"Foundational", q:"Explain how to identify and leverage the 'aha moment' for a newly defined user segment." },
+        // CAT 4 — Growth, Adoption & Monetization (13)
+        { cat:4, diff:"Foundational", q:"Define how you calculate Net Revenue Retention (NRR) versus Gross Revenue Retention (GRR), and why each matters." },
+        { cat:4, diff:"Foundational", q:"What is the difference between a leading and a lagging metric in product marketing analytics?" },
+        { cat:4, diff:"Core", q:"Monthly expansion velocity dropped 15% quarter-over-quarter. Map your end-to-end diagnosis." },
+        { cat:4, diff:"Core", q:"Design an adoption campaign using lifecycle email and in-app triggers to accelerate feature usage." },
+        { cat:4, diff:"Core", q:"How do you prove the GTM attribution of a content campaign on enterprise pipeline velocity?" },
+        { cat:4, diff:"Core", q:"Build a metric-tracking matrix for an open-source tool moving toward a commercial model." },
+        { cat:4, diff:"Core", q:"Your freemium-to-paid conversion has plateaued at 2.1%. Design three growth experiments to test." },
+        { cat:4, diff:"Advanced", q:"Day-7 activation drops 30% after a UI redesign. How do you isolate the operative lever?" },
+        { cat:4, diff:"Advanced", q:"Model the optimal paywall placement inside a consumer mobile productivity app's funnel." },
+        { cat:4, diff:"Advanced", q:"Leadership wants LTV:CAC to move from 3:1 to 5:1 in two quarters. What trade-offs do you present?" },
+        { cat:4, diff:"Advanced", q:"High sign-up volume but heavy drop-off at the first workspace-creation step. Design the optimization." },
+        { cat:4, diff:"Core", q:"How do you define and operationalize a Product Qualified Lead across product, data, and sales?" },
+        { cat:4, diff:"Foundational", q:"What is the difference between feature adoption rate and feature usage depth, and why does it matter?" },
+        // CAT 5 — Competitive Intelligence (12)
+        { cat:5, diff:"Foundational", q:"What is a battlecard, and how do you get sales to actually use it on discovery calls?" },
+        { cat:5, diff:"Foundational", q:"How do you run a feature-matrix comparison against a competitor without looking derivative?" },
+        { cat:5, diff:"Core", q:"A large cloud vendor bundles a free clone of your niche SaaS product. What's your strategic response?" },
+        { cat:5, diff:"Core", q:"Design a scalable competitive-intelligence system that tracks competitor pricing and messaging shifts." },
+        { cat:5, diff:"Core", q:"Use a competitor's win-loss data to find gaps in your own onboarding experience." },
+        { cat:5, diff:"Core", q:"Write the depositioning approach for reps facing a competitor that consistently wins on price." },
+        { cat:5, diff:"Core", q:"How do you identify and exploit architectural weaknesses in an entrenched market leader's product?" },
+        { cat:5, diff:"Advanced", q:"A new entrant scrapes your customer list and launches a targeted predatory-pricing campaign. Your response?" },
+        { cat:5, diff:"Advanced", q:"Build a differentiation playbook for an enterprise data platform in a commoditized cloud market." },
+        { cat:5, diff:"Advanced", q:"Your biggest rival re-positions from an execution tool to a strategic-planning platform. Bluff or trend?" },
+        { cat:5, diff:"Core", q:"How do you run a win-loss program that surfaces the real, unvarnished reasons you lose enterprise deals?" },
+        { cat:5, diff:"Foundational", q:"What are the early indicators that a competitor is about to enter your core vertical?" },
+        // CAT 6 — Stakeholder Alignment & Leadership (12)
+        { cat:6, diff:"Foundational", q:"A sales director builds unapproved, misleading pitch decks to close deals. How do you handle it?" },
+        { cat:6, diff:"Foundational", q:"What's the best format to present GTM performance metrics to executives on a monthly cadence?" },
+        { cat:6, diff:"Core", q:"A PM refuses to allocate engineering to build onboarding UI tools. How do you drive consensus?" },
+        { cat:6, diff:"Core", q:"Align engineering, a risk-averse legal team, and an aggressive sales team on a public beta timeline." },
+        { cat:6, diff:"Core", q:"Design a sales-enablement certification that gets reps to actually adopt updated positioning." },
+        { cat:6, diff:"Core", q:"How do you run a post-mortem after a Tier-1 launch misses its core targets?" },
+        { cat:6, diff:"Core", q:"Product changes the roadmap without telling PMM. How do you fix the underlying process?" },
+        { cat:6, diff:"Advanced", q:"The CEO wants to announce a speculative, unbuilt product at a major keynote. How do you manage the risk?" },
+        { cat:6, diff:"Advanced", q:"Resolve a split between a VP of Product who wants pure PLG and a VP of Sales who demands enterprise customization." },
+        { cat:6, diff:"Advanced", q:"How do you drive a corporate rebrand across thousands of global cross-functional stakeholders?" },
+        { cat:6, diff:"Core", q:"How do you measure the ROI of the product marketing org itself to justify scaling headcount?" },
+        { cat:6, diff:"Foundational", q:"Describe how you manage inbound feedback from hundreds of distributed field sales reps." },
+        // CAT 7 — Pricing, Packaging & Value (12)
+        { cat:7, diff:"Foundational", q:"Explain the difference between cost-plus, competitor-indexed, and value-based pricing." },
+        { cat:7, diff:"Foundational", q:"What is value-based pricing, and how do you calculate the economic value delivered to a customer?" },
+        { cat:7, diff:"Core", q:"Design a usage-based packaging structure for an API product that grows developers while protecting enterprise upside." },
+        { cat:7, diff:"Core", q:"You must raise legacy enterprise prices 15%. Design the retention communication plan." },
+        { cat:7, diff:"Core", q:"Analyze a multi-product SaaS packaging matrix to find and remove feature cannibalization." },
+        { cat:7, diff:"Core", q:"How do you run a Van Westendorp price-sensitivity study to find price points for a new consumer app?" },
+        { cat:7, diff:"Core", q:"Design the monetization strategy for a premium add-on built on top of a strong base product." },
+        { cat:7, diff:"Advanced", q:"Discounting has spiraled and average contract value is down 25%. How do you intervene?" },
+        { cat:7, diff:"Advanced", q:"Transition a legacy seat-based license model to a consumption-based model." },
+        { cat:7, diff:"Advanced", q:"Build a multi-tier international pricing framework for a product facing extreme regional volatility." },
+        { cat:7, diff:"Core", q:"How do you structure tiers to maximize expansion through natural, value-metric usage milestones?" },
+        { cat:7, diff:"Foundational", q:"What is feature bundling, and how do you decide which features belong in a premium tier?" },
+        // CAT 8 — Behavioral & Portfolio (13)
+        { cat:8, diff:"Foundational", q:"Why product marketing? Why build a career at the intersection of product, sales, and customers?" },
+        { cat:8, diff:"Foundational", q:"Walk me through your resume, highlighting the moments you drove real commercial impact." },
+        { cat:8, diff:"Core", q:"Tell me about a launch that failed completely. What did the retrospective teach you?" },
+        { cat:8, diff:"Core", q:"Describe positioning a product under severe time pressure with incomplete documentation." },
+        { cat:8, diff:"Core", q:"Walk through the best product marketing campaign you've seen in the last 12 months, and why." },
+        { cat:8, diff:"Core", q:"Tell me about challenging an executive's positioning assumption using hard data." },
+        { cat:8, diff:"Core", q:"Describe a cross-functional dispute you managed between engineering and sales during a rollout." },
+        { cat:8, diff:"Advanced", q:"Detail a case where your GTM work directly inflected an organization's ARR trajectory." },
+        { cat:8, diff:"Advanced", q:"Tell me about managing a public product crisis under executive and media scrutiny." },
+        { cat:8, diff:"Advanced", q:"How do you balance long-term positioning work with near-term tactical requests from sales?" },
+        { cat:8, diff:"Advanced", q:"Walk through how you'd diagnose a mature product losing share to a low-cost alternative." },
+        { cat:8, diff:"Core", q:"Describe using user empathy to convince product to change their direction." },
+        { cat:8, diff:"Foundational", q:"How do you prioritize when running several simultaneous launches across product lines?" }
+    ];
+
+    // Curated, scenario-specific model answers for exemplar questions (by id).
+    // Every other question gets a domain-tailored scaffold + on-demand AI.
+    const CURATED = {
+        1: "The difference is the subject of the sentence. A feature description makes the product the subject — 'our platform supports SSO and role-based access.' A value proposition makes the customer's outcome the subject — 'your IT team provisions a new hire in under a minute and passes the SOC 2 audit without a manual review.' I'd start from the buyer's job and the metric they're measured on, then connect each capability to that outcome with a 'so that' test: SSO, so that onboarding is instant; RBAC, so that audits pass. If a line can't survive the 'so that' test, it's a spec, not a value prop.",
+        3: "I'd lead with the CHRO's metric, not Slack's features. Their pain is regrettable attrition, and a chunk of that is driven by disconnection and slow time-to-productivity for new hires. So the positioning is: 'Slack helps your people feel connected and ramp faster, which protects retention in the roles you can least afford to lose.' I'd support it with two proof points a CHRO cares about — faster onboarding (new hires find answers and people without waiting on a manager) and stronger belonging for distributed teams — and I'd tie it to a number they track, like first-year attrition or time-to-productivity. I'd deliberately avoid talking about channels, integrations, or huddles unless they map directly to that retention story.",
+        14: "A Tier-1 launch timeline runs in three arcs. Pre-launch (roughly T-8 to T-2 weeks): finalize positioning and messaging, build the sales and CS enablement kit, line up analyst and customer references, localize assets, and lock the launch tier criteria and success metrics. Launch window (T-0): coordinated announcement across owned, earned, and paid, with sales armed and demand gen live. Post-launch (T+1 to T+8 weeks): this is where Tier-1s are won or lost — track activation and adoption, run enablement reinforcement, and report against the success metrics you set. I'd name an owner per workstream and a single launch captain, and I'd define exit criteria up front so we know what 'done' means.",
+        21: "I'd resist matching their 40% cut, because a price war on their terms compresses my margin and signals my product is a commodity. Instead I'd reframe the comparison. First, isolate where the discount actually bites — usually a specific segment — and protect it with a targeted packaging move (a right-sized tier or a switching-cost play like migration support), not an across-the-board cut. Second, arm sales with a depositioning narrative built on total cost and risk: what does the cheaper option cost in implementation, reliability, or lock-in? Third, change the metric the buyer evaluates on, from sticker price to value delivered. I'd pair that with win-loss tracking so we know within weeks whether the counter is holding.",
+        27: "Descriptive segmentation sorts people by who they are — industry, company size, title. Behavioral segmentation sorts them by what they do — activation path, feature usage, frequency, expansion signals. The descriptive cut is easy to build and useful for targeting and messaging, but it's a weak predictor of value because two buyers with identical firmographics can behave nothing alike. Behavioral segments predict retention and expansion far better, which is why I anchor adoption and monetization work on them. In practice I use both: descriptive to find and address the audience, behavioral to decide where to invest and which accounts are about to churn or expand.",
+        29: "Using JTBD, the 'job' isn't 'track tasks' — it's something closer to 'help me stop being the bottleneck so my team and my boss trust that nothing is slipping.' The spreadsheet does the literal task but fails the emotional and social dimensions: it doesn't surface what's at risk, it doesn't give the PM a credible status to show leadership, and it breaks down the moment the team scales. So a tool like Asana gets 'hired' when those failures become painful — usually a missed deadline that was visible in hindsight but invisible in the moment. I'd validate this with switch interviews: find people who recently migrated and reconstruct the trigger, the anxieties, and what they were really buying.",
+        39: "NRR measures revenue retained from an existing cohort including expansion, so it can exceed 100% — you take the cohort's starting recurring revenue, add expansion, subtract contraction and churn, and divide by the start. GRR strips out expansion, so it caps at 100% and shows pure leakage from churn and downgrades. They matter for different reasons: GRR tells you how leaky the bucket is, which is a product and retention question; NRR tells you whether the business compounds without new logos, which is the number investors weight most. If NRR is strong but GRR is weak, you're papering over churn with expansion from a few accounts — a fragile place to be.",
+        45: "A 2.1% plateau usually means the free experience either delivers value too slowly or solves the problem too completely. I'd design three experiments along the funnel. One on time-to-value: compress onboarding so users hit the 'aha moment' in the first session and measure conversion lift. One on the paywall trigger: move the upgrade prompt from a calendar-based nudge to a usage-based one tied to a value moment (hitting a limit they care about), and test contextual versus generic messaging. One on packaging: test what sits behind the wall — if the free tier is too generous, the strongest converters never feel a reason to pay. I'd run them isolated, with conversion and downstream retention as the success metric so I'm not buying conversions that churn.",
+        52: "A battlecard is a one-page sales tool that tells a rep how to win against a specific competitor — where we're stronger, where we're weaker, the traps to set, and the objections to expect, with exact language. The hard part isn't writing it; it's adoption. Reps ignore battlecards that read like marketing collateral. So I build them with sales, not for them: I pull the real objections from call recordings and lost deals, I keep it to the three things that actually move a deal, and I deliver it inside their workflow — in the CRM at the competitive-deal stage, not in a wiki. Then I reinforce it in deal reviews and update it the moment the competitor shifts, so reps trust it's current.",
+        54: "Free-and-bundled from a platform vendor is an existential threat, so I'd separate the real risk from the noise. Bundled clones are usually 'good enough' for the low end and weakest at depth, integrations, and support — that's where I'd re-anchor positioning, toward the segment and use cases where 'good enough' fails. I would not try to win on price against free; I'd compete on the value the bundle can't match and make switching costs visible. Operationally: protect the high-value cohort first with retention and deeper integration, watch win-loss for where the bundle is actually taking deals, and consider a focused tier for the segment most tempted by free. The losing move is to flatten my own pricing in a panic.",
+        64: "I treat it as a systemic problem, not a personal one. Misleading decks expose the company to churn and legal risk, so the first step is to understand the pressure driving it — usually a gap between what sales needs to win and what approved materials give them. I'd address it on two tracks. Short term: have a direct, non-accusatory conversation, make the risk concrete, and get the unapproved claims pulled. Longer term: close the gap that created the workaround by building enablement reps will actually use, and put a lightweight review path in place so accurate, compelling materials are the path of least resistance. If it continues after the gap is closed, it becomes a management and compliance issue, and I'd escalate with documentation.",
+        67: "I'd align them around a shared definition of 'ready' before arguing about dates. Each function is optimizing for a different risk — engineering for quality, legal for exposure, sales for pipeline — so I'd make those risks explicit and convert them into launch-readiness criteria everyone signs off on (what must be true in the product, what legal sign-offs are required, what sales needs to sell). With criteria agreed, the timeline becomes a function of evidence rather than opinion. I'd run a single cross-functional readiness review against that checklist, give each function a clear owner and gate, and use a beta with explicit success and rollback criteria so we're de-risking, not just debating.",
+        76: "Cost-plus prices off your costs plus a margin — simple, internally defensible, but it ignores what the product is worth to the buyer and usually leaves money on the table. Competitor-indexed prices off the market — fast and credible, but it lets competitors set your ceiling and commoditizes you. Value-based prices off the economic value the customer captures — hardest to do because it requires quantifying that value and a strong value metric, but it's the only approach that scales price with worth and protects margin. In practice I anchor on value, sanity-check against competitors so I'm not absurdly out of band, and use cost only as a floor.",
+        81: "Van Westendorp asks four price questions — at what price is it too cheap to trust, a bargain, getting expensive, and too expensive to consider. Plotting the cumulative curves gives you a range of acceptable prices and an optimal point where resistance is balanced. For a new consumer app I'd field it on a representative sample of the target segment, ideally after they've experienced the product so the price reflects perceived value, not a guess. I'd treat the output as a starting range, not gospel — it tells you where the acceptable band is, but I'd validate the actual price with live A/B tests on real conversion, because stated willingness to pay and actual behavior often diverge.",
+        88: "I'm drawn to product marketing because it sits exactly where I do my best work — at the seam between what the product can do, what the market actually needs, and how the business makes money. I like that the job is accountable for outcomes, not just outputs: it's not enough to ship a nice launch, it has to move adoption and revenue. I get energy from the translation work — turning a technical capability into a story a buyer cares about, and turning messy customer signal into a direction the company can act on. And it's a role where being both analytical and creative is an asset rather than a tension, which is how I'm wired.",
+        89: "I'd structure the walk-through around commercial impact, not a chronological list. I'd pick the two or three roles where I owned an outcome and tell each as a short arc: the situation I walked into, the specific thing I did, and the result in numbers — adoption, pipeline, retention, or revenue. For example, rather than 'I ran launches,' I'd say 'I owned the GTM for X, where adoption was tracking below plan; I re-segmented the target and rebuilt the enablement, and we moved activation from A to B in one quarter.' I'd keep it to about two minutes, lead with the most relevant role for this job, and end on why this role is the logical next step — leaving room for them to dig into whichever story interests them.",
+        2: "I'd audit it against one question: would the economic buyer know within five seconds what changes for them? Spec-heavy pages fail because they make the product the subject. So I'd start at the hero — is the headline an outcome the buyer cares about or a feature? Then I'd check the proof: customer results and numbers, or just a capability list? I'd cut anything that serves the engineer who already believes rather than the executive who signs. Concretely, I'd rewrite the hero around the primary job-to-be-done, move the specs into a 'how it works' section below the fold, and put one quantified proof point above it. Then I'd validate the rewrite with a five-second test or a small A/B on conversion — not just internal opinion.",
+        13: "An anti-persona is a deliberate definition of who you are not for — the user who looks like a fit but drains support, churns fast, or distorts the roadmap. It matters because positioning is as much about exclusion as inclusion; a narrative built to fit everyone resonates with no one. I document it like a target persona, but inverted: who they are, why they're attracted to us, the signals that flag them in the funnel, and the cost of serving them. Then I make it actionable — sales disqualifies early, marketing knows which messages not to run, and product knows which requests to deprioritize. The clearest sign it's working is that win rates and retention improve even as raw lead volume drops.",
+        15: "From a go-to-market lens, an alpha succeeds when it proves the product can be sold and adopted, not just that it runs. So I'd set thresholds beyond 'no critical bugs.' I want evidence that a real user reaches the core value moment without hand-holding, that the positioning resonates — measured by whether alpha users can describe the value back to me in their own words — and that we can see the friction points that would break a wider launch. Concretely, I'd define a few exit criteria: an activation rate among alpha users, qualitative confirmation of the value prop, and a list of must-fix adoption blockers. If users can run it but can't articulate why it matters, that's an alpha failure from where I sit, even if the engineering is clean.",
+        26: "I tier launches by strategic impact and the coordination they demand, because that's what should drive resource allocation. Tier-1 is company-defining — a new product line or a release that changes our market position; it gets the full machine: a cross-functional war room, analyst and press, executive involvement, and a long post-launch adoption plan. Tier-2 is meaningful expansion — a significant feature or new segment; it gets enablement, demand gen, and customer comms, but not the full press push. Tier-3 is incremental — improvements and maintenance handled with release notes and in-app messaging. The point of tiering isn't ceremony, it's protecting bandwidth: it stops every release from demanding a full launch and lets the team spend effort where it actually moves the business.",
+        28: "No budget just means I get creative about access, not that I skip the research. The richest free source is people already in our orbit: recent signups, churned users, and customers sales is already talking to. I'd ask CS and sales to flag willing participants, offer a small non-cash incentive like early access or a roadmap preview, and run 30-minute interviews myself. I'd also mine signal that costs nothing — support tickets, sales call recordings, review sites, community forums — for the language customers actually use. The discipline is in the method, not the money: a consistent interview guide, switch-trigger questions, and synthesis I can point others to. Doing the interviews myself early is an advantage — raw exposure to customer language is worth more than a polished outsourced report.",
+        38: "The aha moment is the first time a user experiences the core value clearly enough to 'get it,' and it predicts retention better than almost anything else. To find it, I'd look at where retained and churned users diverge early: what did the people who stuck around do in their first session that the people who left didn't? It's usually a specific event — inviting a teammate, completing a first project, connecting a data source. Once I've identified it, I redesign onboarding to drive every new user to that moment as fast as possible — removing steps before it, nudging toward it, and tracking time-to-aha as a first-class metric. For a new segment I'd validate the moment is the same, because what makes a developer get it may not be what makes an executive get it.",
+        40: "A lagging metric tells you what already happened — revenue, churn, NRR; it's the outcome you own but can't act on directly. A leading metric is an early signal that predicts the lagging one — activation rate, PQL volume, pipeline created; you can influence it now and see movement before the outcome lands. The PMM mistake is managing only to lagging metrics, because by the time they move, the quarter is already decided. So I pair them: I name the lagging business metric I own, identify the two or three leading indicators that drive it, and run my week against the leading ones. The art is choosing leading metrics that are genuinely predictive — page views feel leading but don't move the lagging number, which is how teams stay busy and still miss.",
+        51: "Adoption rate is how many eligible users tried a feature; usage depth is how meaningfully they use it once they have. They matter because a feature can show 70% adoption and still be failing — if everyone clicks it once and never returns, that's breadth without depth, and it won't drive retention or expansion. As a PMM I care about depth because it's the signal the feature is actually solving the job, which is what justifies the next investment and supports the upsell story. So I'd never report adoption alone; I'd pair it with a depth metric like repeat usage or frequency, and I'd be most interested in the gap between the two. High adoption with low depth usually means the messaging sold a promise the experience didn't keep.",
+        53: "A matrix that just lists their features next to ours signals we're playing their game on their terms — it makes us look like a follower. The fix is to set the axes ourselves. Instead of comparing feature-for-feature, I'd organize the comparison around the buyer's decision criteria and the outcomes they care about, then show how each option performs against those. That reframes the conversation from 'who has more checkboxes' to 'who solves my problem better,' and it naturally surfaces the dimensions where we lead. I'd also include criteria the competitor structurally can't win — our architecture, integrations, or support model — so the matrix tells a story rather than tallying parity. The tell of a derivative comparison is that it uses the competitor's feature names as the rows; a confident one uses the customer's language.",
+        63: "I watch for signals that precede a launch by months. Hiring is the loudest: roles posted for our vertical — solutions engineers, industry PMMs, vertical sales — say they're building a motion. Then messaging drift: their site, conference talks, and analyst briefings starting to use our category's language. Product signals: integrations, certifications, or compliance work specific to our space. And commercial signals: them showing up in our deals, partner conversations, or recruiting our people. None of these alone is conclusive, so I'd track them together in a lightweight competitive radar and set a threshold for when the pattern justifies a response. The goal is to know before they announce, so we're shaping the narrative rather than reacting to theirs.",
+        65: "Executives want the story and the decision, not a dashboard dump. So I'd lead with a one-line headline — are we ahead, on track, or at risk on the metric that matters — then show the three or four numbers that justify it, each with its trend and a brief 'so what.' I'd anchor on metrics tied to business outcomes (pipeline, adoption, NRR contribution) rather than activity counts, and I'd always pair a number with the action it implies: here's what's working, here's the one thing I'm worried about, here's what I need from you. The format matters less than the discipline of ending every metric with a decision or an ask. A report that only informs is a missed opportunity; the monthly should move something.",
+        75: "Hundreds of reps means I can't treat every piece of feedback as a one-off — I need a system that separates signal from noise. So I'd give feedback a single front door: one channel where reps log competitive intel, objection patterns, and asset gaps, structured enough that I can categorize and count it. Then I'd treat volume as data — if forty reps flag the same objection, that's a positioning gap, not forty requests. I'd close the loop visibly, because reps stop contributing the moment they think feedback disappears: a regular 'here's what you told us and what we did' digest keeps the pipeline alive. And I'd cultivate a few high-signal reps as a fast-feedback panel for things that need depth rather than breadth.",
+        77: "Value-based pricing sets price off the economic value the customer captures, not your costs or the competitor's number. To calculate that value, I'd quantify the before-and-after for the buyer: what does the problem cost them today — in time, headcount, lost revenue, or risk — and what does that become with our product? If a tool saves a 10-person team five hours a week, that's a concrete labor number; if it lifts conversion two points, that flows straight to revenue. I'd build the value model with a real customer's data, then price to capture a defensible share of it — typically a fraction, so the buyer keeps clear net value. The hard part is the value metric: the unit you price on has to scale with the value the customer feels, or the model breaks the moment usage and value diverge.",
+        87: "Bundling is grouping features into packages so the whole is easier to buy and worth more than the sum of its parts. Deciding what goes in the premium tier is a segmentation question, not a 'put the best stuff up top' question. I'd look at which features different segments value and are willing to pay for, and use that to fence the tiers: features the whole market needs anchor the base, features that disproportionately matter to high-value or enterprise buyers go premium. I'd also use a feature as the reason to upgrade — something a growing customer hits naturally as they expand. The trap is putting a broadly-needed feature behind the premium wall, which throttles adoption, or making the base so complete that no one feels a pull to upgrade. I'd validate the split with willingness-to-pay data, not intuition.",
+        90: "This question tests whether you can own a failure and pull a real lesson from it, so I'd pick a genuine miss — not a humble-brag — and tell it as a tight arc: what we launched and what 'failed' meant in numbers, the specific decision that caused it, and what I changed afterward. An illustrative version: we launched a feature to the whole base assuming broad demand, and adoption came in at a fraction of forecast. The retrospective showed we'd never validated the segment — we'd mistaken a few loud requests for market demand. The lesson I carried forward was to pressure-test demand with a target segment and a small beta before any full launch, and I've run launches that way since. The key is that the lesson is concrete and changed your behavior — a failure with no learning reads worse than the failure itself.",
+        91: "They're testing how you operate when conditions aren't ideal — which is most of the time in PMM — so I'd show a bias toward getting to the customer fast rather than waiting for perfect inputs. Structure: the constraint, how I reached 'good enough' confidence quickly, and the outcome. An illustrative arc: I had days, not weeks, and the spec was half-written, so instead of waiting on engineering I went straight to two design partners and the PM for the core job the product did, drafted positioning around that single job, and pressure-tested the language with sales in a quick review. It wasn't comprehensive, but it was right on the one thing that mattered, and we refined it after launch. The signal I want to send is that I anchor on the customer's core job under pressure rather than freezing, and treat positioning as iterative, not a one-shot deliverable.",
+        92: "This tests your taste and whether you study the craft, so pick a campaign you can analyze rather than just admire, and structure it as: what they did, why it worked mechanically, and what you'd steal. The content matters less than the analysis. A strong answer names the insight behind the campaign — the customer tension it exploited — then connects the creative and channel choices back to that insight, and ends with a critique or a lesson you'd apply. For example, I might break down a positioning campaign that won by naming a category the competitor couldn't claim, explain how the messaging laddered from a sharp customer pain up to the product, and note what made it land — then say what I'd carry into my own work. What you want to avoid is gushing about an ad you liked; show you can reverse-engineer why it worked.",
+        93: "They're checking whether you can influence up without either caving or being combative, so I'd frame it as disagreement backed by evidence and delivered with respect. Structure: the assumption, the data I brought, and how I made the case without making it personal. An illustrative arc: leadership was convinced our buyer was the technical user, and our positioning was built around that. Win-loss data and a batch of deal interviews showed the real budget owner was a business leader who cared about a different outcome entirely. Rather than argue in the abstract, I brought the verbatim quotes and the win-rate gap, proposed a small test of the new positioning, and let the results make the argument. The signal is that I lead with curiosity and evidence, frame it as a test rather than a fight, and care more about being right for the customer than winning the room.",
+        94: "This tests whether you can mediate without picking a side or hiding behind process, so I'd show that I reframed the conflict around the shared goal. Structure: the dispute, what each side actually needed underneath their position, and how I found the path. An illustrative arc: during a rollout, sales wanted to promise a capability engineering said wasn't ready. Both were right from where they sat — sales needed something to close, engineering needed to protect quality. I dug into what sales actually needed, which turned out to be a credible, dated roadmap commitment rather than the feature itself, and what engineering could honestly stand behind. We landed on positioning it as committed-and-dated rather than shipped, which gave sales their story without overpromising. The point is that I treat positional conflict as two unmet needs and look for the option that serves both rather than declaring a winner.",
+        95: "This is your headline impact story, so I'd pick the one where my work is clearly causal and tell it with numbers. Structure: the situation and the ARR problem, the specific GTM intervention I owned, and the inflection with the metric. An illustrative arc: growth had flattened because we were selling a horizontal story into a market that bought vertically. I led a re-segmentation and rebuilt the positioning and enablement around the two verticals where we won most, and re-pointed demand gen behind it. Over the next two quarters, win rate in those segments climbed and ARR growth re-accelerated from flat to a meaningful run-rate. I'd be careful to claim my actual contribution honestly — what I owned versus what the team did — because senior interviewers can smell inflated credit, and a precise, bounded claim is more credible than a heroic one.",
+        96: "They're testing composure and judgment when the stakes are high and visible, so I'd show calm, customer-first prioritization. Structure: the crisis, how I prioritized communication, and the outcome. An illustrative arc: we had a public issue that drew media and executive attention at once. The instinct in the room was to protect the narrative; I argued the first audience had to be affected customers, with a clear, honest account of what happened and what we were doing about it. I coordinated a single source of truth so sales, support, and press weren't telling different stories, and kept the messaging factual rather than defensive. Even if your real example is smaller in scale, the signal is the same: under scrutiny you lead with honesty and the customer, centralize the message to avoid contradiction, and stay calm enough to separate the real problem from the optics.",
+        97: "This tests prioritization and whether you can say no without becoming a blocker, so I'd show a system rather than heroics. The honest tension is that sales requests are urgent and concrete while positioning work is important but easy to defer — so a purely reactive PMM never does the strategic work. My approach is to protect a fixed share of capacity for the long-term work, triage inbound requests by impact rather than volume, and look for leverage by turning a recurring one-off into a reusable asset so I'm not answering it ten times. I'd also make the trade-off visible to stakeholders rather than absorbing it silently — 'I can do this now, which pushes the positioning refresh; here's what I'd recommend.' The signal is that I'm a real partner to sales who still defends the strategic work, and that I manage the tension deliberately instead of just being busy.",
+        98: "I'd resist the obvious answer — drop price — until I understood why we're actually losing. Structure: diagnose, then decide. First I'd segment the loss: are we losing across the board or only at the low end, where a cheaper option should win and maybe we shouldn't fight? I'd pull win-loss data to learn whether buyers are leaving on price or on something price is a proxy for, like complexity or a stale experience. If it's genuinely a value-perception problem, the answer is re-positioning and possibly repackaging to make our differentiated value legible — not matching their price. If we're losing a segment that was never profitable, the right move might be to cede it and double down where we win. The discipline is treating a share decline as a diagnosis problem first; the worst outcome is a reactive cut that trains the market and compresses margin without fixing the cause.",
+        99: "They want evidence you can turn customer understanding into influence over the roadmap. Structure: the direction I disagreed with, the empathy-driven evidence I brought, and the change. An illustrative arc: product was prioritizing a feature based on a vocal request, but my customer interviews showed the request was a symptom — what users actually struggled with was an earlier step in the workflow the team had assumed was fine. Rather than argue priorities abstractly, I brought product into a couple of customer sessions so they heard the friction firsthand, then framed the underlying job we were missing. Hearing it directly shifted the conversation, and we re-pointed the work at the real blocker. The signal is that I lead with the customer's actual experience rather than my opinion, and bring stakeholders into the empathy rather than just reporting it — firsthand exposure changes minds in a way a slide never does.",
+        100: "This tests whether you have a system under load, since juggling launches is the daily reality of the job. I'd show that I prioritize by impact and guard against the failure mode of doing everything at a mediocre level. My approach: tier the launches by strategic impact — not all deserve equal effort — and sequence the heavy lifts so two Tier-1s aren't competing for the same week. I'd reuse ruthlessly: shared frameworks, templated enablement, and a launch checklist so each one doesn't start from zero. And I'd be explicit with stakeholders about what gets full treatment versus a lighter touch, so the trade-offs are chosen rather than accidental. The signal is that I scale through tiering and systems, and that I'd rather land the high-impact launches well than give every launch an equal, diluted effort.",
+        10: "The instinct is to fight the cloud trend head-on, but that's a losing frame — I'd reposition around what the transition actually threatens for our buyers: continuity, control, and the risk of a disruptive rip-and-replace. So rather than framing it as on-prem versus cloud, I'd make the story about modernizing without betting the business. I'd lead with the things cloud-native entrants can't easily match for an installed enterprise base — data sovereignty, deep customization, regulatory fit, and a migration path that doesn't halt operations. At the same time I'd be honest internally that the secular trend is real, so I'd position our own cloud or hybrid path as the bridge rather than deny it. The metric I'd watch is retention and expansion within the installed base, because the near-term battle isn't winning greenfield cloud deals — it's keeping our enterprise accounts from churning during the transition window.",
+        16: "I'd start by getting specific about the buyer and the job, because mid-market retail is still too broad a target. The economic buyer is likely an ops or supply-chain leader whose metric is fulfillment cost and on-time delivery, so the positioning anchors there: cut logistics cost and stockouts without enterprise-grade complexity. For a Tier-1 launch I'd run the three arcs — pre-launch I'd lock the segment, the value model with one or two reference customers, and the enablement kit; the launch window coordinates a focused channel mix where mid-market actually buys, like partner ecosystems, vertical events, and targeted demand gen rather than a broad press blast; and post-launch I'd track activation and time-to-value hard, since mid-market churns fast if onboarding stalls. I'd resist boiling the ocean — pick the two retail sub-segments where our value is sharpest, win those, then expand. Success is measured in pipeline created and early activation, not announcement coverage.",
+        36: "This is one of the hardest tensions in PMM, and the wrong move is to average the two — you end up serving neither. I'd start by separating what each group actually contributes: the developer community is often the source of adoption, advocacy, and bottom-up entry, while enterprise buyers are the revenue. So I'd reframe it from whose requests win to how each group creates value in our motion, and let that drive prioritization rather than the volume of complaints. Concretely, I'd protect the core developer experience that drives adoption — breaking that kills the top of the funnel — while routing enterprise-specific needs like security, admin, and compliance into a tier that doesn't degrade the developer path. The trade-off I'd make explicit to leadership is that we deliberately won't let either group fully dictate the roadmap, and I'd validate the split by watching whether bottom-up adoption and enterprise conversion both stay healthy. If one collapses, the balance is wrong.",
+        48: "First I'd reframe the ask, because a target ratio isn't a strategy — moving 3:1 to 5:1 can be done by cutting acquisition to the bone, which improves the ratio while starving growth. So I'd present the trade-offs explicitly. You get there by raising LTV through better retention, expansion, and pricing, or by lowering CAC through efficiency, channel mix, and conversion — and the two have very different time horizons: CAC levers move within a quarter, LTV levers take longer to show up. In two quarters, realistically the ratio improves mostly through CAC discipline and conversion, with LTV work seeded but not yet banked. The risk I'd flag to leadership is that chasing 5:1 fast usually means pulling back on growth investments, which can cap the top line — so the real question is whether we want efficiency or growth right now. I'd recommend a target that protects pipeline, and I'd show exactly what growth we'd trade away to hit a pure 5:1.",
+        61: "I'd treat 'bluff or trend' as an evidence question, not a gut call. A messaging shift is cheap to make and expensive to back, so I'd look for whether the substance follows the words. Trend signals: are they hiring for the new positioning, building or acquiring the capabilities it implies, landing different buyers, and is an analyst or the market validating the new category? Bluff signals: the website changed but the product, the deals, and the org didn't. I'd also ask why now — is this a real strategic bet, or air cover for a weakness in their core like commoditization at the execution layer? Then I'd respond proportionally: if it's a bluff, I don't chase it and I let them stretch thin; if it's a real move toward where the market is heading, I'd rather shape that category narrative early than concede it. The discipline is responding to evidence of substance, not to their press release.",
+        72: "I'd reframe it away from PLG versus enterprise, because as an either/or it's an unwinnable turf fight — and both VPs are optimizing for something real. Product wants a scalable, low-friction motion; Sales wants to land and keep high-ACV accounts. The reframe is that most successful companies run both, with PLG as the efficient top of the funnel and enterprise sales capturing the accounts that graduate. So I'd anchor the conversation in data: which segments actually convert and expand through self-serve, and which genuinely require customization to close? That usually reveals a line — a tier or ACV threshold where the motion should switch — rather than a binary. My job as PMM is to make that line explicit in the packaging and positioning so it's a designed handoff, not a fight on every deal. The trade-off I'd name is that we deliberately won't customize below a certain ACV, because protecting the scalable motion is worth more than any single bespoke deal.",
+        84: "This is as much a change-management problem as a pricing one, because consumption pricing changes the customer's risk profile — they trade a predictable bill for a variable one, and that scares buyers and procurement. So I'd lead with the value metric: consumption only works if the unit we charge on scales with the value the customer feels, so I'd validate that metric before anything else. Then I'd sequence the transition rather than flip a switch — typically grandfather existing seat contracts, introduce consumption for new business and at renewal, and offer a hybrid option of a committed baseline plus overage to give nervous buyers predictability. I'd arm sales heavily, because this is where deals die: reps need to model the new bill against the old and show net value. The risk I'd flag is short-term revenue choppiness and churn during the shift, so I'd watch NRR and renewal rates closely and be ready to adjust the packaging if the variable bill is driving customers away."
+    };
+
+    // Per-domain coaching and red flags (8 each) — far more specific than one-size-fits-all.
+    const CATEGORY_COACHING = {
+        1: "State the buyer and their metric in your first sentence, then map capabilities to outcomes with a 'so that' test. Interviewers want to see that you start from the customer, not the feature list.",
+        2: "Lead with launch tiering and success criteria before tactics. Naming owners, gates, and post-launch adoption metrics signals you've actually run a launch, not just attended one.",
+        3: "Separate the economic buyer from the user, and show you'd validate with real research (switch interviews, telemetry) rather than asserting a persona from intuition.",
+        4: "Name the specific metric you'd move and why, and show the funnel logic. Vague references to 'engagement' read as junior; NRR, activation, and PQL logic read as commercial.",
+        5: "Avoid bashing competitors. Strong answers re-anchor the comparison on value, total cost, and switching risk, and back it with win-loss evidence.",
+        6: "Frame conflict as a process gap, not a personality clash. Interviewers look for someone who builds alignment mechanisms (shared criteria, gates) rather than just 'getting buy-in.'",
+        7: "Anchor on value-based logic and a clear value metric. Defaulting to cost-plus or competitor-matching signals you haven't quantified worth.",
+        8: "Use a tight situation–action–result arc and lead with the number. Pick the story most relevant to this role, and keep it to about two minutes so they can probe."
+    };
+    const CATEGORY_REDFLAG = {
+        1: "Describing what the technology is instead of what business value it unlocks. If you can't name the buyer's metric, the panel reads you as a feature marketer.",
+        2: "Describing a launch as a one-day announcement with no tiering, enablement, or post-launch adoption plan. Launches are won after T-0, not at it.",
+        3: "Confusing the developer/user with the economic buyer, or asserting a persona with no plan to validate it.",
+        4: "Leaning on top-of-funnel vanity metrics (visits, signups) while ignoring deep-funnel health (activation, NRR, usage depth).",
+        5: "Recommending a reactive price cut to match a competitor without weighing margin, retaliation, or the commoditization signal it sends.",
+        6: "Treating sales or product as adversaries, or 'solving' alignment with a single meeting rather than a repeatable mechanism.",
+        7: "Defaulting to cost-plus or competitor-matching, or proposing tiers with no underlying value metric.",
+        8: "Rambling chronologically with no result, or claiming credit without showing the specific action you took or the number it moved."
+    };
+
+    // Per-domain scaffolds for non-curated questions (8 distinct structures).
+    const CATEGORY_SCAFFOLD = {
+        1: "Open by naming the target buyer and the single metric they're measured on. Map each capability to that outcome with a 'so that' test, then state the one message you'd lead with and the proof points behind it. Close with what you'd deliberately *not* say.",
+        2: "Open by classifying the launch tier and the success criteria. Walk the three arcs — pre-launch readiness, the launch window, and post-launch adoption — naming an owner per workstream. Close with how you'd know it worked.",
+        3: "Open by separating the economic buyer from the user. Describe how you'd gather signal (qualitative + telemetry), what you'd look for, and how you'd turn it into a decision. Close with how you'd validate before betting on it.",
+        4: "Open by naming the exact metric in question and whether it's leading or lagging. Walk the funnel logic to isolate the lever, propose a specific, measurable intervention, and state the success metric. Close with the trade-off you're accepting.",
+        5: "Open by separating the real threat from the noise. Re-anchor the comparison on value, total cost, and switching risk rather than matching the competitor. Close with the win-loss signal you'd watch to know if it's working.",
+        6: "Open by reframing the conflict as a process gap. Surface each function's real risk, convert those into shared criteria or gates, and name the mechanism that keeps alignment durable. Close with how you'd escalate if it persists.",
+        7: "Open by anchoring on the value delivered and the value metric. Lay out the pricing or packaging logic, sanity-check against competitors and cost as a floor, and address the migration or retention risk. Close with the expansion path it creates.",
+        8: "Use a situation–action–result arc. Set the situation in a sentence, focus on the specific action *you* took, and lead with the number you moved. Close with what you learned or why it points to this role."
+    };
+
+    // Per-question 'what this one tests' lines for scaffold questions.
+    // The domain scaffold above gives the shared structure; this gives the angle.
+    const CRUX = {
+        // Domain 1 — Positioning & Messaging
+        4: "The trap is defending your product against 'free.' Re-anchor on what open-source can't give an enterprise — support, security, total cost of ownership — instead of competing on raw capability.",
+        5: "They want the triangle itself — target buyer, the single value, the proof — applied tightly to a high-stakes, security-first buyer, not a generic pitch.",
+        6: "This tests whether you validate before you launch. Show a concrete method (message testing with real buyers) rather than asserting the narrative is good.",
+        7: "The whole point is audience translation: a developer-tool story reframed entirely around what a non-technical budget owner is measured on.",
+        8: "A crisis-positioning test. They're watching for speed, honesty, and whether you can re-anchor value fast — without overreacting or going silent.",
+        9: "Security comms under scrutiny. The angle is proactive transparency and trust: candor that reassures customers without alarming them or arming attackers.",
+        11: "A sensitive-messaging test. The crux is framing automation around augmentation and value without sounding tone-deaf about the jobs it displaces.",
+        12: "A governance question. How do you keep a global narrative intact while allowing local adaptation — usually a messaging architecture with clear guardrails?",
+        // Domain 2 — Go-to-Market & Launch
+        17: "A diagnostic-discipline test. They want you to isolate where adoption breaks — awareness, activation, or value — rather than jump straight to a fix.",
+        18: "Tests whether you localize rather than copy-paste a playbook. The crux is adapting to local supply, regulation, and rider behavior, not just translating the marketing.",
+        19: "Tests whether you run launches as a coordinated operation. They want a clear cadence and ownership, not 'we'll all sync up.'",
+        20: "Tests whether you can reach a conservative, regulated buyer. The crux is trust and proof, not reach — banks don't buy from a clever ad.",
+        22: "Tests whether you lead with the outcome, not the technology. The trap is selling 'blockchain' instead of the compliance and trust it enables.",
+        23: "A composure-under-pressure test. They want judgment on whether to slip, split, or ship — and how you protect credibility either way.",
+        24: "Tests category-creation thinking. The crux is that you must educate the market on the problem before you can sell the solution.",
+        25: "Tests whether you can run two motions without them colliding. The crux is a clean handoff line, not picking one.",
+        // Domain 3 — Customer Insights & Segmentation
+        30: "Tests whether you let data reshape your personas. The crux is shifting from who you assumed buys to who actually drives value.",
+        31: "Tests research design under urgency. The crux is finding the real driver fast, not running a leisurely study.",
+        32: "Tests buying-committee literacy. The crux is recognizing the budget owner is often not the user, and finding them.",
+        33: "Tests synthesis, not data collection. The crux is reconciling what users do (telemetry) with what they say (advisory board) into a single call.",
+        34: "Tests whether you validate before chasing. The crux is proving the new segment is real and worth re-orienting around, not a fluke.",
+        35: "Tests analytical rigor with a commercial purpose. The crux is that the clusters must be actionable, not just statistically tidy.",
+        37: "Tests whether you can operationalize a persona for people with no context. The crux is usable scripts, not a beautiful persona doc.",
+        // Domain 4 — Growth, Adoption & Monetization
+        41: "Tests structured diagnosis. The crux is isolating whether the drop is adoption, value, or commercial — not guessing.",
+        42: "Tests whether you drive behavior to a value moment, not just send messages. The crux is the in-product trigger, not the email.",
+        43: "Tests measurement honesty in a long, multi-touch sale. The crux is making a credible attribution case without overclaiming.",
+        44: "Tests whether you can bridge community metrics and commercial ones. The crux is connecting adoption signals to monetization, not tracking them in isolation.",
+        46: "Tests root-cause isolation. The crux is proving the redesign caused it and finding the exact broken step, not assuming.",
+        47: "Tests the trade-off between reach and revenue. The crux is placing the wall after value is felt but before the user is fully satisfied.",
+        49: "Tests activation-funnel thinking. The crux is that the first key action is the bottleneck, and reducing its friction is the lever.",
+        50: "Tests cross-functional operationalization. The crux is a shared, data-backed definition everyone acts on, not a marketing label.",
+        // Domain 5 — Competitive Intelligence
+        55: "Tests systems thinking over ad-hoc snooping. The crux is a repeatable process that turns signals into action, not a one-time teardown.",
+        56: "Tests turning competitive intel inward. The crux is using their wins as a mirror on your own weaknesses, not just their strengths.",
+        57: "Tests whether you compete on value instead of caving on price. The crux is reframing the buyer's decision criteria, not matching the discount.",
+        58: "Tests structural differentiation. The crux is finding the weakness the leader can't fix without breaking their own model, and owning it.",
+        59: "A composure-under-attack test. The crux is protecting your base without panicking into a price war you'd lose.",
+        60: "Tests differentiation when the core is a commodity. The crux is finding value above the commodity layer, not arguing your infra is special.",
+        62: "Tests whether you get honest signal. The crux is overcoming the bias that reps and buyers sugarcoat loss reasons.",
+        // Domain 6 — Stakeholder Alignment & Leadership
+        66: "Tests influence without authority. The crux is making it the PM's problem too, with evidence, rather than escalating or pushing.",
+        68: "Tests adoption design, not content creation. The crux is changing rep behavior in live deals, not just delivering training.",
+        69: "Tests blameless, systemic analysis. The crux is finding the process failure and changing it, not assigning fault.",
+        70: "Tests fixing systems over symptoms. The crux is addressing the broken process, not relitigating the one incident.",
+        71: "Tests managing up on strategic risk. The crux is balancing the CEO's vision against credibility and customer or legal exposure.",
+        73: "Tests change management at scale. The crux is coordinated execution and adoption across many teams, not designing a new logo.",
+        74: "Tests proving PMM's value commercially. The crux is connecting PMM work to business outcomes, since attribution is hard.",
+        // Domain 7 — Pricing, Packaging & Value
+        78: "Tests dual-motion packaging. The crux is a generous on-ramp for developers that still captures enterprise value as usage scales.",
+        79: "Tests change communication under churn risk. The crux is justifying the increase with value so accounts don't walk.",
+        80: "Tests packaging discipline. The crux is spotting where a lower tier undercuts a higher one and resequencing without alienating customers.",
+        82: "Tests add-on monetization without cannibalizing the base. The crux is pricing the add-on to its own value while protecting core adoption.",
+        83: "Tests pricing governance. The crux is fixing the system that lets discounting run, not just policing individual deals.",
+        85: "Tests global pricing strategy. The crux is balancing local affordability and purchasing power against arbitrage and margin risk.",
+        86: "Tests expansion-led packaging. The crux is designing tiers so customers grow into the next one as they get more value, without friction."
+    };
+
+    // Per-question tailored 'how to approach it' lines. When present, these
+    // replace the generic domain scaffold for that question.
+    const APPROACH = {
+        // Domain 1 — Positioning & Messaging
+        4: "Name the segments still willing to pay and why — support, security, total cost of ownership, accountability — reposition squarely around those, and concede the price-sensitive low end rather than fighting it. Close on the retention metric you'd protect.",
+        5: "Fill the triangle explicitly: buyer is corporate legal, the single value is defensible confidentiality, and the proof is the security architecture and compliance posture. Lead with the risk they can't afford, not the feature list.",
+        6: "Lay out the test: draft two or three message variants, put them in front of real target buyers (interviews or a message-test survey), and define 'resonates' in advance — can they repeat the value back, and does it shift intent? Then iterate before launch.",
+        7: "Translate every capability into the CMO's scoreboard — speed to campaign, revenue, risk — and drop the developer vocabulary entirely. Lead with the business outcome the platform enables and use the technical detail only as proof.",
+        8: "Move fast and transparently: acknowledge the change, re-anchor on the value that survives it, and give customers a concrete path forward. Coordinate one consistent message across support, sales, and comms.",
+        9: "Get ahead of it with a clear, factual disclosure — what happened, who's affected, what to do, by when. Calibrate the detail to reassure customers without arming attackers, and route everything through a single source of truth.",
+        11: "Build the hierarchy around outcomes — faster resolution, 24/7 coverage, deflecting routine load — and frame it as elevating human agents to higher-value work. Address the displacement honestly rather than papering over it.",
+        12: "Set a messaging architecture: a fixed global core (positioning statement, value pillars, non-negotiables) plus defined local flex zones (proof points, examples, tone), and a lightweight review loop so regions adapt within guardrails, not around them.",
+        // Domain 2 — Go-to-Market & Launch
+        17: "Walk the funnel: do target users know the feature exists (awareness and enablement), can they find and start it (activation), and does it deliver value once used (retention)? Instrument each stage, find where the drop concentrates, and fix that lever — not all three at once.",
+        18: "Frame entry around the two-sided market: seed driver supply and rider demand together, since neither works alone. Localize on regulation, payment norms, and density, pick one or two beachhead cities, prove unit economics, then template the rollout.",
+        19: "Set a shared launch plan with named owners and a countdown cadence: PMM owns positioning and the narrative, Product owns readiness and messaging accuracy, Enablement owns rep certification. Lock a single source of truth and run weekly readiness reviews against exit criteria.",
+        20: "Lead with credibility — analyst validation, security and compliance proof, reference customers. Layer channels to the long buying committee: targeted ABM and events for the economic buyer, technical content for the risk and security evaluators, and tie every touch to a quantified fraud-loss outcome.",
+        22: "Bury the blockchain and lead with the buyer's problem — auditable, compliant, tamper-evident health data. Build the GTM around regulatory proof, a narrow beachhead use case, and design partners, since trust and references carry this category, not hype.",
+        23: "Assess impact first: is the slipping feature core to the launch promise? If yes, delay the announcement rather than overpromise; if no, launch the rest and stage the feature with a clear date. Either way, align sales and comms on one honest message and never announce what isn't live.",
+        24: "Lead with the problem, not the product: name and frame the new category, build a point of view that makes the status quo look broken, and recruit early believers and analysts to validate it. Expect a longer education cycle, and measure leading signals — category search, inbound, design partners — before revenue.",
+        25: "Define the threshold where self-serve hands off to sales — usage, seats, or ACV — and design packaging so the upgrade path is obvious. Make sure PLG feeds enterprise pipeline through PQLs rather than competing with it, and arm sales to engage accounts that signal expansion intent.",
+        // Domain 3 — Customer Insights & Segmentation
+        30: "Rebuild the cards around the department head's job and language, not the technical user's: their metric, their buying triggers, the proof they need, the objections they raise. Re-point messaging and collateral to them, and treat the technical user as an influencer rather than the target.",
+        31: "Move fast to the people who left: interview recent churned year-one users for the trigger and the moment value broke down, and contrast with a retained cohort. Pair it with the telemetry around the churn window to localize the cause, then validate the hypothesis before acting.",
+        32: "Map the committee — who signs, who influences, who blocks. Reach the economic buyer through the champion, and in interviews probe their risk and budget lens (what failure keeps them up at night) rather than features. Profile them by the business outcome they're accountable for.",
+        33: "Use each source for what it's good at: telemetry shows what's happening and at what scale; the advisory board explains why. Find where they agree (high confidence) and where they conflict (dig in), then commit to one prioritized direction with the evidence behind it, not a list of everything you heard.",
+        34: "Quantify the signal first: how many, how fast, what's their retention and willingness to pay versus your core? Interview them on the job they're hiring you for, test whether you can serve them without breaking the core, and pilot enterprise motions before committing the roadmap and GTM.",
+        35: "Choose behavioral features tied to expansion (usage depth, breadth, team growth, key actions), cluster on those, then profile each segment for size and propensity. Validate the high-propensity cluster against actual expansion history, and translate it into a targeting play for sales and CS — segmentation that can't be acted on is wasted.",
+        37: "Give SDRs what they'll actually use: the persona's top pains in their own words, two or three opening hooks, the qualifying questions, common objections with responses, and the disqualifiers. Keep it to a one-page playbook plus enablement, since an outsourced team needs ready-to-run language, not nuance to interpret.",
+        // Domain 4 — Growth, Adoption & Monetization
+        41: "Decompose expansion: fewer accounts expanding, smaller expansions, or slower timing? Segment by cohort and product to localize it, check whether a recent product, pricing, or CS change lines up with the dip, and separate a real demand problem from a measurement or seasonality artifact before recommending a fix.",
+        42: "Anchor on the aha moment for the feature and design the campaign to push users to it: in-app triggers at the point of relevance, lifecycle email to re-engage, each tied to a specific action. Measure adoption depth and retention, not opens, and sequence by where the user is in their journey.",
+        43: "Be honest that enterprise is multi-touch: blend influenced-pipeline reporting, a holdout or pre/post comparison, and qualitative deal feedback rather than claiming sole credit. Tie content to movement between specific funnel stages, and present a defensible 'contributed to' story with the caveats.",
+        44: "Build the matrix across the funnel from community to revenue: adoption and engagement signals at the top, conversion signals (which usage predicts paid) in the middle, commercial metrics like conversion rate and NRR at the bottom. Find the leading indicators that predict who converts, and instrument those.",
+        46: "Confirm timing aligns with the release, then funnel-analyze the new flow step by step to find where users now drop that they didn't before. Compare cohorts pre/post, segment by device and user type, and if possible test against a holdout. Fix the specific broken step rather than reverting blindly.",
+        47: "Map where users experience the core value and place the paywall just after that moment — too early kills activation, too late and they never feel a reason to pay. Model it as a trade-off between conversion and retained free users, and A/B test placement and trigger (usage limit vs. feature gate) on real conversion and downstream retention.",
+        49: "Treat workspace creation as the activation gate and attack its friction: cut required steps, add templates or a guided setup, and remove the blank-canvas problem. Instrument the step granularly to see exactly where users abandon, and test whether deferring or pre-filling it lifts completion and downstream retention.",
+        50: "Define the PQL from behaviors that predict conversion (validated against historical paid conversion), then get product, data, and sales to agree on the threshold and the handoff. Operationalize it: data surfaces PQLs, sales has a play and an SLA, and you measure PQL-to-revenue to tune the definition over time.",
+        // Domain 5 — Competitive Intelligence
+        55: "Stand up a lightweight, always-on system: automated monitoring of pricing pages, messaging, and releases; structured intake from sales and win-loss; and a single owner who synthesizes signals into updates. Push the output where it's used (battlecards, enablement) on a cadence, and prioritize the few competitors that actually move deals.",
+        56: "Mine why you lost: where buyers cited a smoother start, faster time-to-value, or better support, treat those as onboarding gaps. Map each loss reason to a specific step in your activation flow, prioritize the ones costing the most deals, and validate the fix by tracking win-rate and activation against that competitor.",
+        57: "Shift from price to total cost and risk: what does the cheaper option cost in implementation, reliability, hidden fees, or switching later? Arm reps with two or three pointed questions that expose those gaps and a value story tied to the buyer's outcome — never a feature-for-feature or price-for-price race.",
+        58: "Look for constraints baked into their architecture or business model — legacy lock-in, a motion that can't go upmarket or down, a thing their pricing punishes. Position squarely where that structural weakness hurts customers, because a leader can't easily copy a move that contradicts their own foundation. Pick the wedge and go deep.",
+        59: "Triage first: identify at-risk accounts and get ahead of them with retention, relationship, and value reinforcement rather than a blanket price cut. Make switching costs and risk visible, consider targeted (not across-the-board) concessions for key accounts, and treat the scrape as a signal to tighten relationships you'd been taking for granted.",
+        60: "Concede the commodity and differentiate on the layer above it: integrations, governance, time-to-value, support, ecosystem, or a specific vertical fit. Anchor positioning on the outcome and total experience rather than raw specs, and build proof — references, benchmarks — for the dimensions buyers can't easily commoditize.",
+        62: "Get past the CRM's 'lost on price' default: use a neutral third party or a structured interview to talk to the actual buyer, not just the rep, soon after the decision. Ask what nearly changed their mind and who really decided, look for patterns across losses, and close the loop so findings change positioning and product — not just a report.",
+        // Domain 6 — Stakeholder Alignment & Leadership
+        66: "Reframe from your ask to a shared goal: bring the data showing onboarding friction is costing activation and retention — outcomes the PM owns. Quantify the impact, propose the smallest version that tests it, and align on a shared metric. If still blocked, escalate with the business case, not a turf complaint.",
+        68: "Build for application: certify reps by having them deliver the new positioning in a mock call, not pass a quiz. Tie it to something that matters (manager sign-off, deal-desk gating), reinforce in deal reviews, and measure adoption by listening to real calls — training that isn't reinforced and measured doesn't stick.",
+        69: "Run it blamelessly and against the original success criteria: separate what we controlled from what we didn't, trace where readiness, targeting, or enablement broke down, and distinguish a bad bet from bad execution. End with a few specific, owned process changes and a follow-up date — a post-mortem with no committed changes is theater.",
+        70: "Solve it once, not every time: establish PMM as a standing input to roadmap and launch-readiness decisions through a defined checkpoint, so changes can't ship without GTM readiness. Frame it as protecting launch quality for both teams, and keep the handoff lightweight enough that Product actually uses it.",
+        71: "Don't just say no: name the specific risks (credibility if it slips, tipping off competitors, customer and legal exposure) and offer a framing that gets the CEO's upside with less downside — vision and direction rather than a dated commitment, or a design-partner preview. Align comms, legal, and product on exactly what can be claimed.",
+        73: "Run it as a program, not a project: secure executive sponsorship, build a phased rollout with a clear migration timeline, and create a single source of truth (brand guidelines, assets, FAQs). Enable regional and functional owners to execute locally, sequence internal-before-external, and track adoption rather than assuming compliance.",
+        74: "Tie PMM to outcomes leadership already cares about: launch-driven adoption and pipeline, sales productivity from enablement (win-rate, ramp, deal velocity), and competitive win-rate. Use influenced metrics honestly where direct attribution isn't possible, and frame the headcount ask as a capacity-to-impact case, not an activity count.",
+        // Domain 7 — Pricing, Packaging & Value
+        78: "Pick a value metric that scales with the customer's success (calls, compute, seats-of-value), set a free or low tier that lets developers adopt and build, then design the curve and enterprise tier so heavy, mission-critical usage pays — with the controls, support, and SLAs enterprises need. Protect the on-ramp; monetize the scale.",
+        79: "Lead with value, not the percentage: remind accounts what they've gained since they signed, give ample notice, and segment the message — high-risk and high-value accounts get a personal, CSM-led conversation, not a mass email. Offer a bridge (phased increase, or a lock-in for committing) and arm CSMs to handle pushback.",
+        80: "Map each feature to the tier it sits in and the segment it serves, and find where a cheaper tier satisfies a need that should pull customers up — that's the cannibalization. Re-fence those features by value and willingness-to-pay, model the revenue and migration impact, and grandfather existing customers so the fix doesn't trigger churn.",
+        82: "Price the add-on off the incremental value it creates, not as a discount on the base, and target the segment that needs it most. Make sure it doesn't gut the base's value (which would hurt adoption and retention), and use it as an expansion lever — something customers grow into — measured by attach rate and its effect on NRR.",
+        83: "Diagnose why reps discount — weak value articulation, no guardrails, or genuine pricing misfit — then fix the system: discount approval thresholds, a deal desk, better value and ROI tools for reps, and incentives that don't reward discounting. Re-anchor on value in enablement, and track ACV and discount depth as managed metrics.",
+        85: "Set pricing by purchasing power and willingness-to-pay per region rather than one global number, but guard against arbitrage (currency, region-hopping) with controls. Decide what's standardized versus localized, hedge or adjust for currency volatility, and revisit on a cadence since the volatility means a set-and-forget framework will drift.",
+        86: "Choose a value metric that rises with the customer's success, and set tier boundaries at natural growth milestones so upgrading feels earned, not punitive. Make the next tier's value obvious at the moment they hit the limit, and design the jumps so expansion is smooth — the goal is NRR through organic graduation, not a forced renegotiation."
+    };
+
+    const PMM_FRAMEWORKS_DATA = [
+        { name:"Positioning & Messaging Triangle", desc:"Aligns product capabilities to buyer outcomes and the economic value behind them.", usage:"Use on positioning, messaging-design, and competitive-depositioning questions." },
+        { name:"5 P's of Go-To-Market", desc:"Product, Persona, Positioning, Price, and Promotion — the pillars of taking a product to market.", usage:"Use when asked to design a launch playbook for a new product or vertical." },
+        { name:"Value Proposition Canvas", desc:"Maps the customer's jobs, pains, and gains to the product's pain relievers and gain creators.", usage:"Use on customer-empathy, persona, and feature-validation questions." },
+        { name:"Ansoff Growth Matrix", desc:"Sorts growth into market penetration, market development, product development, or diversification.", usage:"Use on macro growth, international expansion, and portfolio questions." },
+        { name:"AARRR (Pirate) Funnel", desc:"Acquisition, Activation, Retention, Referral, Revenue — the lifecycle model for adoption tracking.", usage:"Use on analytics, growth-experiment, and retention drop-off questions." },
+        { name:"Jobs To Be Done (JTBD)", desc:"Uncovers the functional, emotional, and social 'job' a customer hires a product to do.", usage:"Use on insights and segmentation questions where demographics fall short." },
+        { name:"Launch Tiering Matrix", desc:"Classifies releases as Tier-1, Tier-2, or Tier-3 to allocate effort and set expectations.", usage:"Use on launch-orchestration and prioritization questions." },
+        { name:"Opportunity Solution Tree", desc:"Links a business outcome to customer opportunities and testable solutions.", usage:"Use on prioritization, roadmap, and experimentation questions." },
+        { name:"Pricing & Packaging Framework", desc:"Balances value-based pricing, a clear value metric, and tier structure.", usage:"Use on monetization, consumption-transition, and expansion questions." },
+        { name:"Root-Cause Funnel Diagnosis", desc:"Isolates external market shifts from internal product changes when a metric moves.", usage:"Use whenever an interviewer hands you a metric-drop case." }
+    ];
+
+    const PMM_BATTLECARD_DATA = [
+        { title:"Concepts to know cold", items:["Value-based pricing","Jobs-To-Be-Done","Product Qualified Leads (PQL)","TAM/SAM/SOM","Economic buyer vs. user"] },
+        { title:"Product-sense phrases", items:["\"Let's ground this in the buyer's main friction point…\"","\"What metric is this buyer measured on?\"","\"Let's translate that capability into a business outcome.\"","\"Here's the trade-off I'd accept.\""] },
+        { title:"Metrics to know cold", items:["NRR and GRR","LTV:CAC (target >3:1)","Day-1 / 7 / 30 activation","Pipeline velocity","Win/loss rates"] },
+        { title:"Launch principles", items:["Announce value unlocks, not specs.","Set clear launch-tier exit criteria.","Enablement is the bridge to revenue.","The launch is the start; optimize adoption."] },
+        { title:"Common mistakes", items:["Feature-factory descriptions.","No tie to NRR/ARR.","Treating sales as adversaries.","Recommending channels without a CAC check."] },
+        { title:"Strong-candidate signals", items:["Applies a framework fast.","Starts from the customer and the metric.","Comfortable with pricing mechanics.","Names trade-offs unprompted."] },
+        { title:"Final-round differentiators", items:["Cites real GTM benchmarks.","Flags risks before being asked.","Presents trade-offs for every pivot.","Pairs technical literacy with commercial sense."] },
+        { title:"Night-before review", items:["Read the firm's packaging/pricing page.","Audit their competitors' taglines.","Lock your 90-second intro.","Pick three stories with numbers."] }
+    ];
+
+    const PMM_REDFLAGS_DATA = [
+        { title:"Feature-centric messaging", desc:"Explaining what the technology is rather than the business value it unlocks for a specific buyer." },
+        { title:"Boiling the ocean", desc:"Targeting 'everyone' instead of naming a high-propensity beachhead segment." },
+        { title:"Vanity-metric focus", desc:"Optimizing for traffic and signups while ignoring activation, NRR, and usage depth." },
+        { title:"Vague launch orchestration", desc:"Describing a launch with no tiering, enablement, or post-launch adoption plan." },
+        { title:"Strategy without trade-offs", desc:"Proposing a pivot or price move without weighing retaliation or margin impact." },
+        { title:"Can't define the persona", desc:"Conflating the technical user with the economic buyer who owns the budget." },
+        { title:"Weak enablement", desc:"Treating sales collateral as a file dump rather than training that changes close rates." },
+        { title:"Shallow pricing logic", desc:"Defaulting to cost-plus or competitor-matching instead of value-based analysis." },
+        { title:"Unstructured delivery", desc:"Rambling into edge cases instead of driving to a structured conclusion." },
+        { title:"No real empathy", desc:"Treating the customer as an abstract segment rather than a person with workflow friction." }
+    ];
+    </script>
+
+    <!-- ===================================================================== -->
+    <!-- APPLICATION LOGIC                                                      -->
+    <!-- ===================================================================== -->
+    <script>
+    // ---- Build the question list -----------------------------------------
+    const PMM_QUESTIONS = QUESTION_SEEDS.map((item, idx) => {
+        const id = idx + 1;
+        return {
+            id, catId: item.cat, category: PMM_CATEGORIES[item.cat],
+            difficulty: item.diff, question: item.q,
+            curated: CURATED[id] || null,
+            scaffold: CATEGORY_SCAFFOLD[item.cat],
+            crux: CRUX[id] || null,
+            approach: APPROACH[id] || null,
+            coaching: CATEGORY_COACHING[item.cat],
+            redFlag: CATEGORY_REDFLAG[item.cat]
+        };
+    });
+
+    // ---- Persistence -----------------------------------------------------
+    function loadResults() {
+        try { return JSON.parse(localStorage.getItem(CONFIG.storageKey)) || {}; }
+        catch { return {}; }
+    }
+    function saveResults(r) {
+        try { localStorage.setItem(CONFIG.storageKey, JSON.stringify(r)); }
+        catch (e) { console.warn("Storage unavailable:", e); }
+    }
+    let RESULTS = loadResults();
+
+    // ---- Brand injection -------------------------------------------------
+    function applyBrand() {
+        const b = CONFIG.brand;
+        document.getElementById('brand-monogram').textContent = b.monogram;
+        document.getElementById('brand-school').textContent = b.school;
+        document.getElementById('brand-track').textContent = b.track;
+        document.getElementById('brand-badge').textContent = b.badge;
+        document.getElementById('brand-org').textContent = b.org;
+        document.getElementById('hero-eyebrow').textContent = b.heroEyebrow;
+        document.getElementById('hero-title').textContent = b.heroTitle;
+        document.getElementById('hero-sub').textContent = b.heroSub;
+        document.getElementById('hero-total').textContent = PMM_QUESTIONS.length;
+        document.title = `${b.school} — ${b.track}`;
+    }
+
+    // ---- Navigation ------------------------------------------------------
+    const NAV_ITEMS = [
+        { id:"question-bank",        label:"Question Bank",   icon:"fa-layer-group" },
+        { id:"readiness-dashboard",  label:"Readiness",       icon:"fa-chart-line" },
+        { id:"frameworks",           label:"Frameworks",      icon:"fa-diagram-project" },
+        { id:"battlecard",           label:"Battlecard",      icon:"fa-bolt" },
+        { id:"red-flags",            label:"Red Flags",       icon:"fa-triangle-exclamation" }
+    ];
+    function buildNav() {
+        const d = document.getElementById('desktop-nav');
+        const m = document.getElementById('mobile-nav');
+        NAV_ITEMS.forEach((it, i) => {
+            const active = i === 0 ? 'active' : '';
+            d.insertAdjacentHTML('beforeend', `
+                <button onclick="switchTab('${it.id}')" id="dbtn-${it.id}" class="nav-link flex w-full items-center gap-3 rounded-md px-3 py-3 text-sm font-semibold text-gray-400 hover:bg-[#161D30] hover:text-white transition-all ${active}">
+                    <i class="fa-solid ${it.icon} text-base w-5 text-center"></i><span>${it.label}</span>
+                </button>`);
+            m.insertAdjacentHTML('beforeend', `
+                <button onclick="switchTab('${it.id}')" id="mbtn-${it.id}" class="mtab flex-shrink-0 whitespace-nowrap border-b-2 border-transparent px-3 py-1.5 text-xs font-bold ${active ? 'active text-white' : 'text-gray-400'} transition-all">${it.label}</button>`);
+        });
+    }
+    function switchTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(s => { s.classList.add('hidden'); s.classList.remove('block'); });
+        const sec = document.getElementById(`sec-${tabId}`);
+        sec.classList.remove('hidden'); sec.classList.add('block');
+        document.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.mtab').forEach(b => { b.classList.remove('active','text-white'); b.classList.add('text-gray-400'); });
+        document.getElementById(`dbtn-${tabId}`)?.classList.add('active');
+        const mb = document.getElementById(`mbtn-${tabId}`);
+        if (mb) { mb.classList.add('active','text-white'); mb.classList.remove('text-gray-400'); }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ---- Filters ---------------------------------------------------------
+    let activeDifficulties = [];
+    function initFilters() {
+        const catGroup = document.getElementById('category-filter-group');
+        Object.keys(PMM_CATEGORIES).forEach(key => {
+            catGroup.insertAdjacentHTML('beforeend', `
+                <div class="flex items-start gap-2.5">
+                    <input type="checkbox" id="cat-${key}" value="${PMM_CATEGORIES[key]}" onchange="filterQuestions()" class="mt-1 h-3.5 w-3.5 rounded border-[#232D45] bg-[#0B0F19] text-[#CC0000] focus:ring-[#CC0000]">
+                    <label for="cat-${key}" class="text-xs text-gray-400 hover:text-white cursor-pointer select-none leading-snug">${PMM_CATEGORIES[key]}</label>
+                </div>`);
+        });
+        const diffGroup = document.getElementById('difficulty-filter-group');
+        PMM_DIFFICULTIES.forEach(level => {
+            const btn = document.createElement('button');
+            btn.id = `diff-${level}`;
+            btn.onclick = () => toggleDifficultyFilter(level);
+            btn.className = 'rounded-full border border-[#232D45] bg-[#0B0F19] px-3 py-1 text-xs font-semibold text-gray-400 hover:text-white transition-all';
+            btn.textContent = level;
+            diffGroup.appendChild(btn);
+        });
+    }
+    function toggleDifficultyFilter(level) {
+        const btn = document.getElementById(`diff-${level}`);
+        if (activeDifficulties.includes(level)) {
+            activeDifficulties = activeDifficulties.filter(l => l !== level);
+            btn.className = 'rounded-full border border-[#232D45] bg-[#0B0F19] px-3 py-1 text-xs font-semibold text-gray-400 hover:text-white transition-all';
+        } else {
+            activeDifficulties.push(level);
+            btn.className = 'rounded-full border border-[#CC0000] bg-[#CC0000] px-3 py-1 text-xs font-semibold text-white transition-all';
+        }
+        filterQuestions();
+    }
+    function clearAllFilters() {
+        Object.keys(PMM_CATEGORIES).forEach(key => { const cb = document.getElementById(`cat-${key}`); if (cb) cb.checked = false; });
+        PMM_DIFFICULTIES.forEach(level => {
+            const btn = document.getElementById(`diff-${level}`);
+            if (btn) btn.className = 'rounded-full border border-[#232D45] bg-[#0B0F19] px-3 py-1 text-xs font-semibold text-gray-400 hover:text-white transition-all';
+        });
+        activeDifficulties = [];
+        document.getElementById('question-search').value = '';
+        filterQuestions();
+    }
+    function filterQuestions() {
+        const searchQuery = document.getElementById('question-search').value.toLowerCase();
+        const selected = [];
+        Object.keys(PMM_CATEGORIES).forEach(key => { const cb = document.getElementById(`cat-${key}`); if (cb && cb.checked) selected.push(cb.value); });
+        let visible = 0;
+        document.querySelectorAll('.question-card').forEach(card => {
+            const cat = card.getAttribute('data-category');
+            const diff = card.getAttribute('data-difficulty');
+            const text = card.getAttribute('data-search');
+            const ok = text.includes(searchQuery)
+                && (selected.length === 0 || selected.includes(cat))
+                && (activeDifficulties.length === 0 || activeDifficulties.includes(diff));
+            card.classList.toggle('hidden', !ok);
+            if (ok) visible++;
+        });
+        document.getElementById('visible-count').textContent = visible;
+    }
+
+    // ---- Render question cards ------------------------------------------
+    function escapeHtml(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+
+    function renderQuestions() {
+        const container = document.getElementById('questions-container');
+        container.innerHTML = '';
+        PMM_QUESTIONS.forEach(q => {
+            const card = document.createElement('div');
+            card.id = `qcard-${q.id}`;
+            card.className = 'question-card rounded-xl border border-[#232D45] bg-[#161D30] overflow-hidden';
+            card.setAttribute('data-category', q.category);
+            card.setAttribute('data-difficulty', q.difficulty);
+            const kw = (CATEGORY_KEYWORDS[q.catId]||[]).join(' ');
+            card.setAttribute('data-search', (q.question + ' ' + q.category + ' ' + kw).toLowerCase());
+
+            let diffBadge = "text-emerald-400 bg-emerald-400/10 ring-emerald-400/20";
+            if (q.difficulty === "Core") diffBadge = "text-[#c9a84c] bg-[#c9a84c]/10 ring-[#c9a84c]/20";
+            if (q.difficulty === "Advanced") diffBadge = "text-[#CC0000] bg-[#CC0000]/10 ring-[#CC0000]/20";
+
+            const result = RESULTS[q.id];
+            const scoreChip = result ? `<span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-400 ring-1 ring-inset ring-emerald-500/20"><i class="fa-solid fa-check text-[8px]"></i>${result.score}/100</span>` : '';
+
+            // Answer tab content
+            const answerHtml = q.curated
+                ? `<p class="text-gray-300 leading-relaxed">${escapeHtml(q.curated)}</p>`
+                : `<div class="rounded-lg bg-[#0B0F19] border border-[#232D45] p-3 mb-3 space-y-2">
+                       ${q.crux ? `<p class="text-gray-300 leading-relaxed"><span class="font-bold text-white">What this one tests:</span> ${escapeHtml(q.crux)}</p>` : ''}
+                       <p class="${q.crux ? 'pt-2 border-t border-[#232D45] ' : ''}text-gray-300 leading-relaxed"><span class="font-bold text-[#c9a84c]">${q.approach ? 'How to approach it:' : `How to structure a ${escapeHtml(q.category)} answer:`}</span> <span class="text-gray-400">${escapeHtml(q.approach || q.scaffold)}</span></p>
+                   </div>
+                   <p class="text-[11px] text-gray-500 mb-3 leading-relaxed">This scenario has many valid answers, so rather than one script to memorize, here's how to structure your own. Build from this, or generate a full worked example to compare against.</p>
+                   <button onclick="aiAnswer(${q.id})" id="aibtn-${q.id}" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#c9a84c] to-[#b0903b] px-3 py-2 text-xs font-bold text-slate-950 hover:brightness-110 transition-all">
+                       <i class="fa-solid fa-wand-magic-sparkles"></i><span>Generate a full model answer</span>
+                   </button>
+                   <div id="aiout-${q.id}" class="hidden mt-3 text-gray-300 leading-relaxed"></div>`;
+
+            card.innerHTML = `
+                <div onclick="toggleQuestionDrawer(${q.id})" class="flex items-start justify-between gap-4 p-5 cursor-pointer hover:bg-[#1C263E] transition-colors">
+                    <div class="space-y-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-bold ring-1 ring-inset ${diffBadge}">${q.difficulty}</span>
+                            <span class="text-[11px] font-bold tracking-wider uppercase text-gray-500">${q.category}</span>
+                            ${scoreChip}
+                        </div>
+                        <h4 class="text-sm font-bold text-white leading-snug">${q.id}. ${escapeHtml(q.question)}</h4>
+                    </div>
+                    <div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#0B0F19] text-gray-400" id="arrow-${q.id}">
+                        <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300"></i>
+                    </div>
+                </div>
+                <div id="drawer-${q.id}" class="hidden border-t border-[#232D45] bg-[#0E1424]">
+                    <div class="flex border-b border-[#232D45] bg-[#0B0F19]/40 px-2 sm:px-4 overflow-x-auto custom-scrollbar">
+                        <button onclick="switchAnswerTab(event, ${q.id}, 'ans')" id="tab-${q.id}-ans" class="border-b-2 border-[#CC0000] px-3 sm:px-4 py-3 text-xs font-bold text-white whitespace-nowrap">Model Answer</button>
+                        <button onclick="switchAnswerTab(event, ${q.id}, 'coach')" id="tab-${q.id}-coach" class="border-b-2 border-transparent px-3 sm:px-4 py-3 text-xs font-bold text-gray-400 hover:text-white whitespace-nowrap">Coaching</button>
+                        <button onclick="switchAnswerTab(event, ${q.id}, 'red')" id="tab-${q.id}-red" class="border-b-2 border-transparent px-3 sm:px-4 py-3 text-xs font-bold text-gray-400 hover:text-white whitespace-nowrap">Red Flag</button>
+                    </div>
+                    <div class="p-5 text-sm leading-relaxed text-gray-300">
+                        <div id="content-${q.id}-ans" class="answer-panel block">${answerHtml}</div>
+                        <div id="content-${q.id}-coach" class="answer-panel hidden flex items-start gap-3 rounded-xl bg-blue-950/20 border border-blue-900/30 p-4 text-xs text-blue-100">
+                            <i class="fa-solid fa-graduation-cap text-base text-[#c9a84c] mt-0.5"></i>
+                            <div><strong class="text-white block mb-1">Coach insight</strong>${escapeHtml(q.coaching)}</div>
+                        </div>
+                        <div id="content-${q.id}-red" class="answer-panel hidden flex items-start gap-3 rounded-xl bg-red-950/20 border border-red-900/30 p-4 text-xs text-red-100">
+                            <i class="fa-solid fa-triangle-exclamation text-base text-[#CC0000] mt-0.5"></i>
+                            <div><strong class="text-white block mb-1">What sinks this answer</strong>${escapeHtml(q.redFlag)}</div>
+                        </div>
+                    </div>
+                    <div class="bg-[#0B0F19]/20 border-t border-[#232D45] px-5 py-3 flex items-center justify-between">
+                        <span class="text-[11px] text-gray-500 font-medium">${CONFIG.brand.school}</span>
+                        <button onclick="openPracticeSandbox(${q.id})" class="flex items-center gap-1.5 rounded-lg bg-[#232D45] hover:bg-[#2D3A57] px-3 py-1.5 text-xs font-bold text-white transition-colors">
+                            <i class="fa-solid fa-microphone text-[11px] text-[#c9a84c]"></i><span>Practice this</span>
+                        </button>
+                    </div>
+                </div>`;
+            container.appendChild(card);
+        });
+        filterQuestions();
+    }
+    function toggleQuestionDrawer(id) {
+        const drawer = document.getElementById(`drawer-${id}`);
+        const arrow = document.getElementById(`arrow-${id}`).querySelector('i');
+        const hidden = drawer.classList.toggle('hidden');
+        arrow.classList.toggle('rotate-180', !hidden);
+    }
+    function switchAnswerTab(ev, id, type) {
+        ev.stopPropagation();
+        ['ans','coach','red'].forEach(t => {
+            const b = document.getElementById(`tab-${id}-${t}`);
+            const p = document.getElementById(`content-${id}-${t}`);
+            b.classList.remove('border-[#CC0000]','text-white'); b.classList.add('border-transparent','text-gray-400');
+            p.classList.add('hidden'); p.classList.remove('block');
+        });
+        const tb = document.getElementById(`tab-${id}-${type}`);
+        const tp = document.getElementById(`content-${id}-${type}`);
+        tb.classList.add('border-[#CC0000]','text-white'); tb.classList.remove('border-transparent','text-gray-400');
+        tp.classList.remove('hidden'); tp.classList.add('block');
+    }
+
+    // ---- Render the static sections -------------------------------------
+    function generateFrameworks() {
+        const w = document.getElementById('frameworks-container');
+        PMM_FRAMEWORKS_DATA.forEach((fw, i) => {
+            w.insertAdjacentHTML('beforeend', `
+                <div class="rounded-xl border border-[#232D45] bg-[#161D30] p-5 space-y-3">
+                    <h3 class="text-sm font-bold text-[#c9a84c] flex items-center gap-2">
+                        <span class="text-[#CC0000] font-mono text-xs">${String(i+1).padStart(2,'0')}</span><span>${fw.name}</span>
+                    </h3>
+                    <p class="text-xs text-gray-300 leading-relaxed">${fw.desc}</p>
+                    <div class="rounded-lg bg-[#0B0F19] p-3 text-[11px] border border-[#232D45] text-gray-400">
+                        <strong class="text-white block mb-0.5">When to reach for it</strong>${fw.usage}
+                    </div>
+                </div>`);
+        });
+    }
+    function generateBattlecard() {
+        const w = document.getElementById('battlecard-container');
+        PMM_BATTLECARD_DATA.forEach(bc => {
+            const items = bc.items.map(it => `
+                <li class="flex items-start gap-2 text-[11px] text-gray-300 leading-snug">
+                    <i class="fa-solid fa-angles-right text-[8px] text-[#c9a84c] mt-1.5 flex-shrink-0"></i><span>${it}</span>
+                </li>`).join('');
+            w.insertAdjacentHTML('beforeend', `
+                <div class="rounded-xl border border-[#232D45] bg-[#161D30] p-4 space-y-3">
+                    <h3 class="text-xs font-black uppercase tracking-wider text-white border-b border-[#232D45] pb-2 flex items-center justify-between">
+                        <span>${bc.title}</span><i class="fa-solid fa-bolt text-[10px] text-[#CC0000]"></i>
+                    </h3>
+                    <ul class="space-y-2 pt-1">${items}</ul>
+                </div>`);
+        });
+    }
+    function generateRedFlags() {
+        const w = document.getElementById('red-flags-container');
+        PMM_REDFLAGS_DATA.forEach(rf => {
+            w.insertAdjacentHTML('beforeend', `
+                <div class="rounded-xl border border-[#CC0000]/10 bg-[#161D30] p-5 flex items-start gap-4">
+                    <div class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[#CC0000]/10 border border-[#CC0000]/20 text-[#CC0000]">
+                        <i class="fa-solid fa-triangle-exclamation text-sm"></i>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="text-xs font-bold text-white uppercase tracking-wide">${rf.title}</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">${rf.desc}</p>
+                    </div>
+                </div>`);
+        });
+    }
+
+    // ---- LLM helper (graceful degradation) -------------------------------
+    function aiAvailable() {
+        // In the Claude artifact preview the proxy injects credentials.
+        // On your own host, set CONFIG.api.browserKey to enable.
+        return true; // attempt; we catch failures and fall back
+    }
+    async function callClaude(prompt, maxTokens) {
+        const headers = { "Content-Type": "application/json" };
+        if (CONFIG.api.browserKey) {
+            headers["x-api-key"] = CONFIG.api.browserKey;
+            headers["anthropic-version"] = "2023-06-01";
+            headers["anthropic-dangerous-direct-browser-access"] = "true";
+        }
+        const res = await fetch(CONFIG.api.endpoint, {
+            method: "POST", headers,
+            body: JSON.stringify({
+                model: CONFIG.api.model,
+                max_tokens: maxTokens || CONFIG.api.maxTokens,
+                messages: [{ role: "user", content: prompt }]
+            })
+        });
+        if (!res.ok) throw new Error("API " + res.status);
+        const data = await res.json();
+        return data.content.filter(b => b.type === "text").map(b => b.text).join("\n").trim();
+    }
+
+    async function aiAnswer(id) {
+        const q = PMM_QUESTIONS.find(x => x.id === id);
+        const btn = document.getElementById(`aibtn-${id}`);
+        const out = document.getElementById(`aiout-${id}`);
+        btn.disabled = true; btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i><span>Writing…</span>';
+        const prompt = `You are an expert Product Marketing Manager interview coach. Write a strong, concise model answer (about 130-160 words, first person, spoken-interview style — no headers or bullet points) to this PMM interview question. Start from the customer and the metric, connect capability to outcome, name specific metrics, and end with a trade-off or how you'd validate.\n\nDomain: ${q.category}\nQuestion: "${q.question}"`;
+        try {
+            const text = await callClaude(prompt, 600);
+            out.innerHTML = `<p class="leading-relaxed">${escapeHtml(text)}</p>`;
+            out.classList.remove('hidden');
+            btn.classList.add('hidden');
+        } catch (e) {
+            const fallback = `You are an expert PMM interview coach. Write a strong ~150-word spoken model answer to: "${q.question}" (Domain: ${q.category}). Start from the customer and metric, map capability to outcome, name specific metrics, and end with a trade-off.`;
+            out.innerHTML = `
+                <div class="rounded-lg bg-[#0B0F19] border border-[#c9a84c]/20 p-3">
+                    <p class="text-xs text-[#c9a84c] font-bold mb-1">In-app AI isn't available on this deployment.</p>
+                    <p class="text-xs text-gray-400 mb-2">Copy this prompt into Claude or ChatGPT to generate the answer:</p>
+                    <textarea readonly class="w-full h-52 rounded bg-[#0B0F19] border border-[#232D45] p-2 text-[11px] font-mono text-gray-300 custom-scrollbar">${escapeHtml(fallback)}</textarea>
+                </div>`;
+            out.classList.remove('hidden');
+            btn.disabled = false; btn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i><span>Generate a full model answer</span>';
+        }
+    }
+
+    // ---- Practice modal: speech + metrics --------------------------------
+    let selectedQuestionObj = null, speechRecognizer = null, isRecordingActive = false;
+    let trackingInterval = null, trackingSeconds = 0, trackedWordsCount = 0, trackedFillerCount = 0, continuousTranscript = "";
+
+    function openPracticeSandbox(id) {
+        selectedQuestionObj = PMM_QUESTIONS.find(q => q.id === id);
+        document.getElementById('modal-question-text').textContent = `${selectedQuestionObj.id}. ${selectedQuestionObj.question}`;
+        resetSandbox();
+        document.getElementById('practice-modal').classList.remove('hidden');
+    }
+    function closePracticeModal() { stopAudioCaptureSession(); document.getElementById('practice-modal').classList.add('hidden'); }
+    function resetSandbox() {
+        stopAudioCaptureSession();
+        trackingSeconds = 0; trackedWordsCount = 0; trackedFillerCount = 0; continuousTranscript = "";
+        document.getElementById('track-time').textContent = "00:00";
+        document.getElementById('track-wpm').textContent = "0 WPM";
+        document.getElementById('track-fillers').textContent = "0";
+        document.getElementById('transcript-area').value = "";
+        document.getElementById('eval-result-panel').classList.add('hidden');
+        document.getElementById('manual-log-panel').classList.add('hidden');
+        const btn = document.getElementById('evaluate-btn-text'); if (btn) btn.textContent = "Evaluate my answer";
+    }
+    function toggleRecording() { isRecordingActive ? stopAudioCaptureSession() : startAudioCaptureSession(); }
+    function startAudioCaptureSession() {
+        const SpeechAPI = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechAPI) { alert("Speech recognition isn't available in this browser. You can still type your answer. (Try desktop Chrome or Safari for voice.)"); return; }
+        speechRecognizer = new SpeechAPI();
+        speechRecognizer.continuous = true; speechRecognizer.interimResults = true; speechRecognizer.lang = 'en-US';
+        continuousTranscript = document.getElementById('transcript-area').value;
+        if (continuousTranscript.trim().length > 0 && !continuousTranscript.endsWith(" ")) continuousTranscript += " ";
+        speechRecognizer.onstart = () => {
+            isRecordingActive = true;
+            document.getElementById('record-btn-text').textContent = "Stop recording";
+            document.getElementById('btn-toggle-record').classList.add('pulse-record');
+            trackingInterval = setInterval(() => {
+                trackingSeconds++;
+                const m = String(Math.floor(trackingSeconds/60)).padStart(2,'0');
+                const s = String(trackingSeconds%60).padStart(2,'0');
+                document.getElementById('track-time').textContent = `${m}:${s}`;
+                if (trackingSeconds > 2) document.getElementById('track-wpm').textContent = `${Math.round((trackedWordsCount/trackingSeconds)*60)} WPM`;
+            }, 1000);
+        };
+        speechRecognizer.onresult = (event) => {
+            let interim = '';
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                const seg = event.results[i][0].transcript;
+                if (event.results[i].isFinal) continuousTranscript += seg + ' '; else interim += seg;
+            }
+            const text = continuousTranscript + interim;
+            document.getElementById('transcript-area').value = text;
+            analyzeLiveTextMetrics(text);
+        };
+        speechRecognizer.onerror = (err) => { console.error("Speech error:", err.error); stopAudioCaptureSession(); };
+        speechRecognizer.onend = () => stopAudioCaptureSession();
+        speechRecognizer.start();
+    }
+    function stopAudioCaptureSession() {
+        if (trackingInterval) { clearInterval(trackingInterval); trackingInterval = null; }
+        if (speechRecognizer) { try { speechRecognizer.stop(); } catch {} speechRecognizer = null; }
+        isRecordingActive = false;
+        const b = document.getElementById('btn-toggle-record');
+        if (b) { b.classList.remove('pulse-record'); document.getElementById('record-btn-text').textContent = "Start recording"; }
+    }
+    function analyzeLiveTextMetrics(text) {
+        const tokens = text.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()]/g,"").split(/\s+/).filter(Boolean);
+        trackedWordsCount = tokens.length;
+        let fillers = 0;
+        const single = CONFIG.fillerWords.filter(w => !w.includes(" "));
+        tokens.forEach(t => { if (single.includes(t)) fillers++; });
+        CONFIG.fillerWords.filter(w => w.includes(" ")).forEach(phrase => {
+            fillers += text.toLowerCase().split(phrase).length - 1;
+        });
+        trackedFillerCount = fillers;
+        document.getElementById('track-fillers').textContent = fillers;
+    }
+
+    // ---- Evaluation (real scores → dashboard) ----------------------------
+    function buildEvalPrompt(text) {
+        const dims = CONFIG.scoringDimensions.map((d,i) => `${i+1}. ${d.label}`).join("\n");
+        return `You are an expert Product Marketing Manager interview coach. Evaluate the candidate's spoken answer against the PMM rubric below and return ONLY valid JSON (no markdown, no preamble).
+
+DOMAIN: ${selectedQuestionObj.category}
+QUESTION: "${selectedQuestionObj.question}"
+DELIVERY: ${document.getElementById('track-time').textContent} duration, ${document.getElementById('track-wpm').textContent}, ${trackedFillerCount} filler words.
+CANDIDATE ANSWER:
+"${text}"
+
+Score each dimension from 1 (weak) to 5 (excellent):
+${dims}
+
+Return JSON exactly in this shape:
+{"scores":{${CONFIG.scoringDimensions.map(d=>`"${d.key}":<1-5>`).join(",")}},"what_worked":"<1-2 sentences citing the answer>","improvements":["<specific scripted fix>","<second fix>"],"power_move":"<one advanced reframe>"}`;
+    }
+    // Human-readable version for the copy-paste path: clean, formatted output a person can read.
+    function buildHumanEvalPrompt(text) {
+        const dimLines = CONFIG.scoringDimensions.map(d => `${d.label}: _/5`).join("\n");
+        return `You are an expert Product Marketing Manager interview coach. Evaluate my spoken answer to the interview question below, then give clear, well-formatted feedback.
+
+DOMAIN: ${selectedQuestionObj.category}
+QUESTION: "${selectedQuestionObj.question}"
+DELIVERY: ${document.getElementById('track-time').textContent} duration, ${document.getElementById('track-wpm').textContent}, ${trackedFillerCount} filler words.
+MY ANSWER:
+"${text}"
+
+Format your response EXACTLY like this, with a blank line between each section and every score on its own line:
+
+SCORES (1-5, where 5 is excellent)
+${dimLines}
+
+WHAT WORKED
+(1-2 sentences citing specific words from my answer)
+
+IMPROVEMENTS
+1. (the most important gap, with a scripted fix showing exactly what to say)
+2. (the second gap, with a scripted fix)
+
+POWER MOVE
+(one advanced reframe that would elevate the answer)
+
+Keep each of the five scores on its own line so I can enter them into my tracker.`;
+    }
+    function scoreFromDims(dims) {
+        const keys = CONFIG.scoringDimensions.map(d => d.key);
+        const sum = keys.reduce((a,k) => a + (Number(dims[k])||0), 0);
+        return Math.round((sum / (keys.length*5)) * 100);
+    }
+    function renderEvalResult(parsed, score) {
+        const panel = document.getElementById('eval-result-panel');
+        const dimRows = CONFIG.scoringDimensions.map(d =>
+            `<div class="flex items-center justify-between text-xs"><span class="text-gray-400">${d.label}</span><span class="font-bold text-white">${parsed.scores[d.key]}/5</span></div>`).join("");
+        const imps = (parsed.improvements||[]).map(i => `<li class="ml-4 list-disc text-gray-300">${escapeHtml(i)}</li>`).join("");
+        panel.innerHTML = `
+            <div class="flex items-center justify-between border-b border-[#232D45] pb-2">
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide flex items-center gap-1"><i class="fa-solid fa-circle-check"></i> Evaluation</span>
+                <span class="text-lg font-black text-white">${score}/100</span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 pt-1">${dimRows}</div>
+            <div class="pt-2 text-xs"><strong class="text-white">What worked:</strong> <span class="text-gray-300">${escapeHtml(parsed.what_worked||'')}</span></div>
+            <div class="text-xs"><strong class="text-white">Top improvements:</strong><ul class="mt-1 space-y-1">${imps}</ul></div>
+            <div class="text-xs"><strong class="text-[#c9a84c]">Power move:</strong> <span class="text-gray-300">${escapeHtml(parsed.power_move||'')}</span></div>`;
+        panel.classList.remove('hidden');
+    }
+    function recordResult(score) {
+        RESULTS[selectedQuestionObj.id] = { score, catId: selectedQuestionObj.catId, ts: Date.now() };
+        saveResults(RESULTS);
+        recomputeDashboard();
+        renderQuestions(); // refresh score chips
+    }
+    async function evaluateResponse() {
+        stopAudioCaptureSession();
+        const text = document.getElementById('transcript-area').value.trim();
+        if (text.length < 20) { alert("Add a bit more to your answer before evaluating."); return; }
+        analyzeLiveTextMetrics(text);
+        const btnTxt = document.getElementById('evaluate-btn-text');
+        btnTxt.textContent = "Evaluating…";
+        const prompt = buildEvalPrompt(text);
+        try {
+            let raw = await callClaude(prompt, 800);
+            raw = raw.replace(/```json|```/g, "").trim();
+            const parsed = JSON.parse(raw);
+            const score = scoreFromDims(parsed.scores);
+            renderEvalResult(parsed, score);
+            recordResult(score);
+            btnTxt.textContent = "Re-evaluate";
+        } catch (e) {
+            console.warn("Eval fallback:", e);
+            showManualLog(text);
+            btnTxt.textContent = "Evaluate my answer";
+        }
+    }
+    function showManualLog(text) {
+        const prompt = buildHumanEvalPrompt(text);
+        const panel = document.getElementById('manual-log-panel');
+        const sliders = CONFIG.scoringDimensions.map(d => `
+            <div class="flex items-center justify-between gap-3">
+                <label class="text-xs text-gray-300 flex-1">${d.label}</label>
+                <select id="ml-${d.key}" class="rounded bg-[#0B0F19] border border-[#232D45] text-xs text-white px-2 py-1">
+                    <option value="3">3</option><option value="1">1</option><option value="2">2</option><option value="4">4</option><option value="5">5</option>
+                </select>
+            </div>`).join("");
+        panel.innerHTML = `
+            <p class="text-xs font-bold text-[#c9a84c] uppercase tracking-wide">Log your evaluation</p>
+            <p class="text-xs text-gray-400">In-app AI isn't available on this deployment. Copy the prompt below into Claude or ChatGPT, then read the five scores off its response and enter them here to update your dashboard.</p>
+            <textarea readonly class="w-full h-52 rounded bg-[#0B0F19] border border-[#232D45] p-2 text-[11px] font-mono text-gray-300 custom-scrollbar">${escapeHtml(prompt)}</textarea>
+            <div class="space-y-2">${sliders}</div>
+            <button onclick="logManualScores()" class="rounded-lg bg-emerald-600 hover:bg-emerald-500 px-3 py-2 text-xs font-bold text-white">Save to dashboard</button>`;
+        panel.classList.remove('hidden');
+    }
+    function logManualScores() {
+        const dims = {};
+        CONFIG.scoringDimensions.forEach(d => dims[d.key] = Number(document.getElementById(`ml-${d.key}`).value));
+        const score = scoreFromDims(dims);
+        recordResult(score);
+        document.getElementById('manual-log-panel').innerHTML = `<p class="text-xs text-emerald-400 font-bold"><i class="fa-solid fa-check"></i> Saved — ${score}/100 added to your dashboard.</p>`;
+    }
+
+    // ---- Dashboard -------------------------------------------------------
+    function setupDashboardMetrics() {
+        const c = document.getElementById('competency-progress-bars');
+        c.innerHTML = '';
+        Object.keys(PMM_CATEGORIES).forEach(key => {
+            c.insertAdjacentHTML('beforeend', `
+                <div class="space-y-1.5">
+                    <div class="flex justify-between text-xs font-medium">
+                        <span class="text-gray-300">${PMM_CATEGORIES[key]}</span>
+                        <span class="text-[#c9a84c] font-bold" id="comp-score-${key}">—</span>
+                    </div>
+                    <div class="w-full bg-[#0B0F19] rounded-full h-2 overflow-hidden border border-[#232D45]">
+                        <div id="comp-bar-${key}" class="bg-gradient-to-r from-[#CC0000] to-[#c9a84c] h-2 transition-all duration-500" style="width:0%"></div>
+                    </div>
+                </div>`);
+        });
+    }
+    function tierLabel(score) {
+        let label = CONFIG.tiers[0].label;
+        CONFIG.tiers.forEach(t => { if (score >= t.min) label = t.label; });
+        return label;
+    }
+    function recomputeDashboard() {
+        // group results by category
+        const byCat = {}; let total = 0, count = 0;
+        Object.values(RESULTS).forEach(r => {
+            (byCat[r.catId] = byCat[r.catId] || []).push(r.score);
+            total += r.score; count++;
+        });
+        Object.keys(PMM_CATEGORIES).forEach(key => {
+            const arr = byCat[key] || [];
+            const avg = arr.length ? Math.round(arr.reduce((a,b)=>a+b,0)/arr.length) : 0;
+            const scoreEl = document.getElementById(`comp-score-${key}`);
+            const barEl = document.getElementById(`comp-bar-${key}`);
+            if (scoreEl) scoreEl.textContent = arr.length ? `${avg}%` : '—';
+            if (barEl) barEl.style.width = `${avg}%`;
+        });
+        const overall = count ? Math.round(total/count) : 0;
+        document.getElementById('dash-overall-score').textContent = count ? `${overall}%` : '—';
+        document.getElementById('hero-avg-score').textContent = count ? `${overall}%` : '—';
+        document.getElementById('hero-eval-count').textContent = count;
+        const tier = count ? tierLabel(overall) : "Getting Started";
+        document.getElementById('dash-readiness-tier').textContent = tier;
+        document.getElementById('hero-readiness-level').textContent = tier;
+    }
+    function resetDashboardScores() {
+        if (!confirm("Clear all your evaluation scores? This can't be undone.")) return;
+        RESULTS = {}; saveResults(RESULTS);
+        recomputeDashboard(); renderQuestions();
+    }
+    function exportProgress() {
+        const count = Object.keys(RESULTS).length;
+        if (!count) { alert("No scores to export yet — evaluate a few answers first."); return; }
+        const payload = { app: "pmm-interview-playbook", version: 2, exported: new Date().toISOString(), results: RESULTS };
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `pmm-progress-${new Date().toISOString().slice(0,10)}.json`;
+        document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+    }
+    function importProgress(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+            try {
+                const data = JSON.parse(reader.result);
+                const imported = data.results || data; // accept raw results too
+                if (typeof imported !== 'object') throw new Error("bad shape");
+                const existing = Object.keys(RESULTS).length;
+                const merge = existing
+                    ? confirm("Merge imported scores with your current ones? Click Cancel to replace your current scores instead.")
+                    : true;
+                if (merge) {
+                    RESULTS = { ...RESULTS, ...imported };
+                } else {
+                    RESULTS = { ...imported };
+                }
+                saveResults(RESULTS);
+                recomputeDashboard(); renderQuestions();
+                alert(`Imported ${Object.keys(imported).length} question score(s).`);
+            } catch (e) {
+                alert("That file couldn't be read as a valid progress export.");
+            }
+            event.target.value = ""; // allow re-importing the same file
+        };
+        reader.readAsText(file);
+    }
+
+    // ---- Init ------------------------------------------------------------
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePracticeModal(); });
+    document.getElementById('practice-modal').addEventListener('click', e => {
+        if (e.target.id === 'practice-modal') closePracticeModal();
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+        applyBrand();
+        buildNav();
+        initFilters();
+        renderQuestions();
+        generateFrameworks();
+        generateBattlecard();
+        generateRedFlags();
+        setupDashboardMetrics();
+        recomputeDashboard();
+    });
+    </script>
+</body>
+</html>
