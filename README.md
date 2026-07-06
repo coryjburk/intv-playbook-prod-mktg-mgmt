@@ -1,14 +1,18 @@
-# intv-playbook-prod-mktg-mgmt
-Product Marketing Management Interview Playbook
+**Full-Time MBA Program · David Eccles School of Business**
 # Product Marketing Manager — Interview Playbook
 
 ### Student User Manual
 
 *Everything you need to practice smarter and walk into your PMM interviews ready.*
 
-Built by **Eccles MBA Career Services** · David Eccles School of Business · University of Utah
+---
+
+## Live Link
+
+[https://coryjburk.github.io/intv-playbook-pe_vc/]
 
 ---
+
 
 ## Contents
 
