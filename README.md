@@ -9,7 +9,7 @@
 
 ## Live Link
 
-[https://coryjburk.github.io/intv-playbook-pe_vc/]
+[https://coryjburk.github.io/intv-playbook-prod-mktg-mgmt/]
 
 ---
 
