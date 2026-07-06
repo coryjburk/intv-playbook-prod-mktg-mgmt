@@ -9,7 +9,7 @@
 
 ## Live Link
 
-[https://coryjburk.github.io/intv-playbook-prod-mktg-mgmt/]
+[Intv Playbook – Product Marketing Manager (vC)](https://coryjburk.github.io/intv-playbook-prod-mktg-mgmt/)
 
 ---
 
